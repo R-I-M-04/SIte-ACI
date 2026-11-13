@@ -1,441 +1,347 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofoliu Mobilă | ACI - Actual Cip Invest Răzvad</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Portofoliu Mobilă la Comandă | ACI - Actual Cip Invest Răzvad</title>
+<meta name="description" content="Lucrări reale ACI: bucătării, living, dormitoare, dressinguri, dulapuri și birouri, realizate în atelierul nostru din Răzvad, Dâmbovița.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+[hidden]{display:none!important}
+:root{
+  --ink:#1a1918; --gold:#c59b27; --gold-d:#a17c1a;
+  --bg:#fafaf8; --card:#fff; --line:#ebe7df; --muted:#6b6660;
+  --r:16px; --wa:#25d366;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:calc(72px + var(--safe-b))}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;border-radius:12px;padding:15px 20px;font-size:1rem;min-height:52px;border:0;cursor:pointer}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}
 
-    <style>
-        :root {
-            --primary: #c59b27;
-            --primary-dark: #a17c1a;
-            --primary-light: #f4e8c1;
-            --dark: #121619;
-            --gray-light: #fafbfc;
-            --gray-border: #e2e8f0;
-            --gray-text: #64748b;
-            --white: #ffffff;
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+/* HEADER (identic cu pagina principală) */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--gold);display:grid;place-items:center}
+.logo b{font-weight:800;letter-spacing:.06em}
+.logo b span{color:var(--gold)}
+.logo small{display:block;font-size:.58rem;letter-spacing:.18em;color:var(--muted);font-weight:700}
+.nav{display:none;gap:26px;font-weight:600;font-size:.92rem}
+.nav a:hover,.nav a.on{color:var(--gold)}
+.top-call{display:none}
+.burger{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:1.1rem}
+.drawer{position:fixed;inset:62px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:8px 18px 18px;z-index:49;box-shadow:0 20px 30px rgba(0,0,0,.08)}
+.drawer a{display:flex;justify-content:space-between;padding:15px 2px;border-bottom:1px solid var(--line);font-weight:700}
+@media(min-width:900px){.nav,.top-call{display:flex}.burger{display:none}}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+/* ANTET PAGINĂ */
+.page-hero{background:var(--ink);color:#fff;padding:34px 0 30px}
+.page-hero h1{font-size:2.1rem;margin:6px 0 8px}
+.page-hero p{color:#cfc8bc;max-width:560px;font-size:.96rem}
+.crumbs{font-size:.8rem;color:#a59e93;margin-bottom:14px}
+.crumbs a{color:#e5d6a8}
+@media(min-width:700px){.page-hero{padding:56px 0 46px}.page-hero h1{font-size:3rem}}
 
-        html { scroll-behavior: smooth; }
+/* FILTRE: rând glisabil, lipit sub header */
+.filter-bar{position:sticky;top:62px;z-index:40;background:rgba(250,250,248,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.portfolio-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 18px;max-width:1140px;margin:0 auto}
+.portfolio-filters::-webkit-scrollbar{display:none}
+.filter-btn{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:99px;padding:10px 16px;min-height:44px;font-weight:700;font-size:.88rem;cursor:pointer;transition:background .2s,color .2s}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.results-count{color:var(--muted);font-size:.85rem;margin:20px 0 14px}
 
-        body {
-            background-color: var(--gray-light);
-            color: var(--dark);
-            line-height: 1.6;
-            padding-bottom: 70px;
-        }
+/* GALERIE */
+.gallery-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:50px}
+@media(min-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(min-width:992px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+.gallery-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.gallery-card.hidden{display:none}
+@media(hover:hover){.gallery-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,25,24,.08)}}
+.gallery-img-box{position:relative;height:250px;overflow:hidden;background:#eee;cursor:zoom-in}
+.gallery-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+@media(hover:hover){.gallery-card:hover .gallery-img-box img{transform:scale(1.04)}}
+.gallery-img-box.collage{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+.gallery-img-box.collage img{min-height:0}
+.gallery-img-box.collage img:first-child{grid-row:1/span 2}
+.gallery-img-box.collage.wide{grid-template-columns:1fr 1fr;grid-template-rows:2fr 1fr}
+.gallery-img-box.collage.wide img:first-child{grid-column:1/span 2;grid-row:1}
+.category-badge{position:absolute;top:12px;left:12px;font-size:.72rem;font-weight:700;background:rgba(255,255,255,.92);color:#7a5f17;padding:5px 10px;border-radius:99px;pointer-events:none}
+.gallery-info{padding:16px}
+.gallery-info h3{font-size:1.15rem;margin-bottom:6px}
+.gallery-info p{color:var(--muted);font-size:.88rem}
 
-        @media (min-width: 992px) {
-            body { padding-bottom: 0; }
-        }
+/* CTA final */
+.cta{background:var(--ink);color:#fff;border-radius:var(--r);padding:26px 20px;margin-bottom:50px;display:grid;gap:14px}
+.cta h2{font-size:1.6rem}
+.cta p{color:#cfc8bc;font-size:.95rem}
+.cta .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:800px){.cta{grid-template-columns:1fr auto;align-items:center;padding:34px}.cta .two{min-width:380px}}
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--dark); }
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; display: block; }
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(20,18,16,.96);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:80vh;border-radius:10px;object-fit:contain}
+.lb-caption{position:absolute;bottom:calc(22px + var(--safe-b));left:0;right:0;text-align:center;color:#fff;font-weight:600;padding:0 70px}
+.lb-btn{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;cursor:pointer;width:48px;height:48px;border-radius:50%;font-size:1.1rem}
+.lb-btn:hover{background:var(--gold)}
+.lb-close{top:16px;right:16px}
+.lb-prev{left:10px;top:50%;transform:translateY(-50%)}
+.lb-next{right:10px;top:50%;transform:translateY(-50%)}
 
-        .container {
-            width: 100%;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;font-size:.82rem}
 
-        /* HEADER */
-        .header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.4rem;
-        }
-
-        .logo-icon {
-            width: 44px; height: 44px;
-            background: linear-gradient(135deg, var(--dark) 0%, #2a323d 100%);
-            border-radius: var(--radius-sm);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--primary);
-            border: 1px solid rgba(197, 155, 39, 0.3);
-        }
-
-        .logo-text span { color: var(--primary); }
-        .logo-sub {
-            display: block; font-size: 0.65rem; font-weight: 600;
-            letter-spacing: 2px; color: var(--gray-text); text-transform: uppercase;
-            margin-top: -2px;
-        }
-
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--dark);
-            color: var(--white);
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .btn-back:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* HERO PORTOFOLIU */
-        .page-hero {
-            padding: 140px 0 50px 0;
-            text-align: center;
-            background: linear-gradient(180deg, #f4f6f8 0%, #fafbfc 100%);
-            border-bottom: 1px solid var(--gray-border);
-        }
-
-        .page-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        @media (min-width: 768px) {
-            .page-hero h1 { font-size: 3.2rem; }
-        }
-
-        .page-hero p {
-            color: var(--gray-text);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        /* FILTRE PORTOFOLIU */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            border: 1px solid var(--gray-border);
-            background: var(--white);
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--dark);
-            color: var(--white);
-            border-color: var(--dark);
-        }
-
-        /* GALERIE GRID */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        @media (min-width: 600px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (min-width: 992px) {
-            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .gallery-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-border);
-            transition: var(--transition);
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .gallery-img-box {
-            position: relative;
-            height: 260px;
-            overflow: hidden;
-            background: #e2e8f0;
-        }
-
-        .gallery-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-card:hover .gallery-img-box img {
-            transform: scale(1.06);
-        }
-
-        .category-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(18, 22, 25, 0.85);
-            backdrop-filter: blur(8px);
-            color: var(--white);
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .gallery-info {
-            padding: 22px;
-        }
-
-        .gallery-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .gallery-info p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-
-        /* FOOTER & BARA MOBILĂ */
-        footer {
-            background: var(--dark);
-            color: #a0aec0;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .mobile-bottom-bar {
-            position: fixed; bottom: 0; left: 0; right: 0; height: 65px;
-            background: rgba(18, 22, 25, 0.95); backdrop-filter: blur(12px);
-            display: flex; justify-content: space-around; align-items: center; z-index: 1000;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 0 10px;
-        }
-
-        @media (min-width: 992px) { .mobile-bottom-bar { display: none; } }
-
-        .mobile-bar-btn {
-            display: flex; flex-direction: column; align-items: center; gap: 4px; color: #a0aec0; font-size: 0.7rem; font-weight: 600; width: 25%;
-        }
-
-        .mobile-bar-btn.highlight { color: var(--white); background: var(--primary); padding: 8px 0; border-radius: var(--radius-sm); }
-    </style>
+/* BARA DE JOS (mobil) */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;padding:9px 10px calc(9px + var(--safe-b))}
+.bar a{display:flex;align-items:center;justify-content:center;gap:7px;font-weight:700;border-radius:12px;min-height:48px;font-size:.9rem}
+.bar .c{background:#f2efe9}
+.bar .w{background:var(--wa);color:#fff}
+.bar .o{background:var(--gold);color:#fff}
+@media(min-width:900px){.bar{display:none}body{padding-bottom:0}}
+</style>
 </head>
 <body>
 
-    <!-- NAVIGARE -->
-    <header class="header">
-        <div class="container nav-wrapper">
-            <a href="Index.html" class="logo">
-                <div class="logo-icon"><i class="fa-solid fa-couch"></i></div>
-                <div>
-                    <div class="logo-text">ACI <span>Mobilă</span></div>
-                    <span class="logo-sub">Actual Cip Invest</span>
-                </div>
-            </a>
-            <a href="Index.html" class="btn-back">
-                <i class="fa-solid fa-arrow-left"></i> Înapoi la Site
-            </a>
-        </div>
-    </header>
+<header class="top">
+  <div class="wrap">
+    <a href="Index.html" class="logo"><i class="fa-solid fa-couch"></i><div><b>ACI <span>MOBILĂ</span></b><small>ACTUAL CIP INVEST</small></div></a>
+    <nav class="nav"><a href="Index.html#servicii">Servicii</a><a href="Portofoliu.html" class="on">Portofoliu</a><a href="Index.html#proces">Cum lucrăm</a><a href="Index.html#faq">Întrebări</a><a href="Index.html#contact">Contact</a></nav>
+    <a class="btn btn-gold top-call" href="Index.html#oferta" style="min-height:44px;padding:10px 18px;font-size:.9rem">Cere ofertă</a>
+    <button class="burger" id="burger" aria-label="Meniu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" hidden>
+  <a href="Index.html">Acasă <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#servicii">Servicii <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#proces">Cum lucrăm <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#oferta">Cere ofertă <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#faq">Întrebări frecvente <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#contact">Contact & program <i class="fa-solid fa-chevron-right"></i></a>
+</nav>
 
-    <!-- HERO PORTOFOLIU -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Portofoliu Lucrări ACI</h1>
-            <p>Descoperă proiectele realizate pe comandă în atelierul nostru din Răzvad, Dâmbovița (Strada Luca Nr. 18 C).</p>
-        </div>
-    </section>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="Index.html">Acasă</a> / Portofoliu</div>
+    <span class="eyebrow">Portofoliu</span>
+    <h1>Lucrările noastre</h1>
+    <p>Proiecte reale, realizate în atelierul nostru din Răzvad, Dâmbovița. Atinge o poză ca să o vezi mare.</p>
+  </div>
+</section>
 
-    <!-- GALERIE CU FILTRE -->
-    <section class="container">
-        <div class="portfolio-filters">
-            <button class="filter-btn active" onclick="filterCategory('all')">Toate Proiectele</button>
-            <button class="filter-btn" onclick="filterCategory('bucatarii')">Bucătării</button>
-            <button class="filter-btn" onclick="filterCategory('dormitor')">Dormitor</button>
-            <button class="filter-btn" onclick="filterCategory('living')">Living</button>
-        </div>
+<div class="filter-bar"><div class="portfolio-filters" id="filters"></div></div>
 
-        <div class="gallery-grid" id="portfolioGallery">
-            <!-- Bucătării -->
-            <div class="gallery-card" data-category="bucatarii">
-                <div class="gallery-img-box">
-                    <img src="Photodump/WhatsApp Image 2026-11-02 at 21.20.38 (18).jpeg" alt="Bucătărie MDF Mat">
-                    <span class="category-badge">Bucătărie</span>
-                </div>
-                <div class="gallery-info">
-                    <h3>Bucătărie Modernă MDF Mat</h3>
-                    <p>Bucatarie mica si cocheta, pentru un spatiu restrans</p>
-                </div>
-            </div>
+<main class="wrap">
+  <p class="results-count" id="resultsCount"></p>
+  <div class="gallery-grid" id="portfolioGallery"></div>
 
-            <div class="gallery-card" data-category="bucatarii">
-                <div class="gallery-img-box">
-                    <img src="Photodump/WhatsApp Image 2026-11-02 at 21.20.38 (16).jpeg" alt="Bucătărie ">
-                    <span class="category-badge">Bucătărie</span>
-                </div>
-                <div class="gallery-info">
-                    <h3>Bucătărie MDF Lucioasa </h3>
-                    <p>Proiect cu fronturi MDF lucioase.</p>
-                </div>
-                
-            <div class="gallery-card" data-category="bucatarii">
-                <div class="gallery-img-box">
-                    <img src="Photodump/WhatsApp Image 2026-11-02 at 21.20.38 (1).jpeg" alt="Bucătărie Colț">
-                    <span class="category-badge">Bucătărie</span>
-                </div>
-                 <div class="gallery-info">
-                    <h3>Insula de Bucatarie Moderna</h3>
-                    <p>Insulă centrală, blat termorezistent și feronerie Blum cu amortizare.</p>
-                </div>
-            </div>
-
-            <!-- Dormitor -->
-            <div class="gallery-card" data-category="dormitor">
-                <div class="gallery-img-box">
-                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Dormitor Matrimonial">
-                    <span class="category-badge">Dormitor</span>
-                </div>
-                <div class="gallery-info">
-                    <h3>Set Dormitor Matrimonial</h3>
-                    <p>Dressing generos cu uși glisante și pat tapițat cu depozitare.</p>
-                </div>
-            </div>
-            <!--Dressing-->
-            <div class="gallery-card" data-category="Dressing">
-                <div class="gallery-img-box">
-                    <img src=""
-                    img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.15 (2).jpeg"\
-                     alt="Dressing">
-                    <span class="category-badge">Dressing</span>
-                </div>
-                <div class="gallery-info">
-                    <h3>Set Dormitor Matrimonial</h3>
-                    <p>Dressing generos cu uși glisante și pat tapițat cu depozitare.</p>
-                </div>
-            </div>
-            
-
-            <!-- Living -->
-            <div class="gallery-card" data-category="living">
-                <div class="gallery-img-box">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Living Open Space">
-                    <span class="category-badge">Living</span>
-                </div>
-                <div class="gallery-info">
-                    <h3>Comodă TV & Bibliotecă Living</h3>
-                    <p>Mobilier suspendat din lemn și accente metalice negru mat.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            &copy; 2026 Actual Cip Invest (ACI). Strada Luca Nr. 18 C, Răzvad, Dâmbovița.
-        </div>
-    </footer>
-
-    <!-- BARA MOBILĂ JOS -->
-    <div class="mobile-bottom-bar">
-
-        <a href="tel:0774998426" class="mobile-bar-btn highlight"><i class="fa-solid fa-phone"></i><span>Sună</span></a>
-        <a href="mailto:actualcipinvest@gmail.com" class="mobile-bar-btn"><i class="fa-solid fa-envelope"></i><span>Gmail</span></a>
-        <a href="https://www.tiktok.com" target="_blank" class="mobile-bar-btn"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a>
-        <a href="https://maps.google.com/?q=Strada+Luca+nr+18+C+Razvad+Dambovita" target="_blank" class="mobile-bar-btn"><i class="fa-solid fa-map-pin"></i><span>Hartă</span></a>
-
-
-      <a href="tel:0774998426" class="mobile-bar-btn highlight" ></a>
-
-       <a  href="tel:0712345678" class="mobile-bar-btn highlight"></a>
-
-        ><i class="fa-solid fa-phone"></i><span>Sună</span></a
-      >
-      <a href="mailto:actualcipinvest@gmail.com" class="mobile-bar-btn"
-        ><i class="fa-solid fa-envelope"></i><span>Gmail</span></a
-      >
-      <a href="https://www.tiktok.com" target="_blank" class="mobile-bar-btn"
-        ><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a
-      >
-      <a
-        href="https://www.google.com/maps/place/Actual+CIP+Invest+SRL/"
-        target="_blank"
-        class="mobile-bar-btn"
-        ><i class="fa-solid fa-map-pin"></i><span>Hartă</span></a
-      >
-
+  <div class="cta">
+    <div>
+      <h2>Ți-a plăcut ceva?</h2>
+      <p>Spune-ne ce lucrare te-a inspirat și îți facem o ofertă pe dimensiunile tale.</p>
     </div>
+    <div class="two">
+      <a class="btn btn-gold" href="Index.html#oferta"><i class="fa-solid fa-file-pen"></i> Cere ofertă</a>
+      <a class="btn btn-wa" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</main>
 
-    <!-- JAVASCRIPT PENTRU FILTRARE -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Închide"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterioara"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Următoarea"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+
+<nav class="bar">
+  <a class="c" href="tel:0722252414"><i class="fa-solid fa-phone"></i> Sună</a>
+  <a class="w" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> Chat</a>
+  <a class="o" href="Index.html#oferta"><i class="fa-solid fa-file-pen"></i> Ofertă</a>
+</nav>
+
     <script>
-        function filterCategory(category) {
-            const cards = document.querySelectorAll('.gallery-card');
-            const buttons = document.querySelectorAll('.filter-btn');
+        // Ajutor pentru pozele WhatsApp din folderul Photodump
+        const A = '21.20.38', B = '21.23.15', C = '21.23.58';
+        const PD = (t, n) => 'Photodump/WhatsApp Image 2026-11-02 at ' + t + (n ? ' (' + n + ')' : '') + '.jpeg';
 
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        const CATEGORIES = [
+            ['all', 'Toate Proiectele'],
+            ['bucatarii', 'Bucătării'],
+            ['living', 'Living'],
+            ['dormitor', 'Dormitor'],
+            ['dressing', 'Dressing'],
+            ['dulapuri', 'Dulapuri & Birouri']
+        ];
+        const LABELS = {
+            bucatarii: 'Bucătărie', living: 'Living', dormitor: 'Dormitor',
+            dressing: 'Dressing', dulapuri: 'Dulapuri & Birouri'
+        };
 
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+        // Ordinea e gândită ca un tur al casei: bucătărie -> living -> dormitor -> dressing -> depozitare/birou.
+        // În fiecare categorie, cele mai frumoase lucrări sunt primele.
+        const ITEMS = [
+            // ---- Bucătării
+            { cat: 'bucatarii', wide: true, srcs: ['Bucatarie R/Buc1.jpeg', 'Bucatarie R/Buc2.jpeg', 'Bucatarie R/Buc3.jpeg'], pos: ['50% 50%', '60% 40%', '50% 35%'], title: 'Bucătărie Modernă Capucino cu LED', desc: 'Corpuri suspendate până în tavan, blat în decor stejar, iluminare LED, uscător de vase și coș de gunoi integrat.' },
+            { cat: 'bucatarii', src: PD(A, 16), title: 'Bucătărie Clasică Antracit', desc: 'Fronturi frezate, vopsite mat în gri antracit.' },
+            { cat: 'bucatarii', src: PD(A, 0), title: 'Insulă de Bucătărie', desc: 'Insulă centrală spațioasă, cu fronturi mat și mânere negre.' },
+            { cat: 'bucatarii', src: PD(A, 18), title: 'Bucătărie în Decor de Piatră', desc: 'Bucătărie compactă și îngrijită, cu blat și fronturi în decor de piatră.' },
+            { cat: 'bucatarii', src: PD(A, 17), title: 'Bucătărie cu Uscător de Vase', desc: 'Corpuri suspendate cu uscător integrat și hotă încastrată.' },
+            { cat: 'bucatarii', src: PD(A, 14), title: 'Bucătărie în Execuție', desc: 'Montajul corpurilor, înainte de fronturi și blat.' },
+
+            // ---- Living
+            { cat: 'living', src: 'Doctor/Sufragerie2.jpeg', title: 'Living Modern în Lemn Natural', desc: 'Comodă TV suspendată cu lamele, rafturi plutitoare și LED.' },
+            { cat: 'living', src: 'Doctor/Sufragerie.jpeg', title: 'Living – Perspectivă', desc: 'Comodă TV lungă și bufet cu lamele, în același decor.' },
+            { cat: 'living', src: 'Doctor/Masuta extensibila.jpeg', title: 'Masă Extensibilă Integrată în Bufet', desc: 'Bufet cu lamele, care ascunde o masă extensibilă.' },
+            { cat: 'living', src: 'Avocat/TV.jpeg', title: 'Comodă TV și Corpuri Suspendate', desc: 'Comodă joasă plutitoare, corpuri suspendate și rafturi.' },
+
+            // ---- Dormitor
+            { cat: 'dormitor', src: 'Doctor/Dormitor.jpeg', title: 'Măsuță Toaletă Suspendată cu LED', desc: 'Blat plutitor cu sertare, comodă suspendată și oglindă cu iluminare LED.' },
+            { cat: 'dormitor', src: 'Doctor/Noptiera.jpeg', title: 'Noptieră Suspendată', desc: 'Noptieră cu sertar și nișă deschisă, prinsă pe perete.' },
+            { cat: 'dormitor', src: PD(C, 7), title: 'Dulap Alb Lucios cu TV Integrat', desc: 'Nișă pentru televizor, sertare și dulapuri de tavan.' },
+            { cat: 'dormitor', src: PD(C, 10), title: 'Dulap Alb Lucios – Deschis', desc: 'Bară de haine, rafturi și dulapuri de tavan.' },
+            { cat: 'dormitor', src: PD(C, 8), title: 'Dulap Dormitor – Compartimentare', desc: 'Uși glisante și batante, cu depozitare până în tavan.' },
+            { cat: 'dormitor', src: 'babi/Dormitor suspendat.jpeg', title: 'Dormitor cu Corp Suspendat', desc: 'Corp suspendat deasupra patului, cu uși și rafturi deschise.' },
+            { cat: 'dormitor', src: 'babi/Dormitor.jpeg', title: 'Dulap cu Uși Glisante', desc: 'Dulap înalt, cu uși glisante și picioruși reglabili.' },
+            { cat: 'dormitor', src: 'babi/Dormitor2.jpeg', title: 'Dulap Dormitor – Interior', desc: 'Bară de haine, raft și două sertare mari pe glisiere.' },
+            { cat: 'dormitor', src: 'babi/Hol2.jpeg', title: 'Dulap cu Uși Glisante – Închis', desc: 'Fronturi în decor de lemn deschis, cu profile de aluminiu.' },
+            { cat: 'dormitor', src: 'babi/Hol.jpeg', title: 'Dulap cu Uși Glisante – Deschis', desc: 'Bară de haine și rafturi, cu priză integrată în interior.' },
+
+            // ---- Dressing
+            { cat: 'dressing', src: PD(B, 0), title: 'Dressing Nuc cu Iluminare LED', desc: 'Dressing walk-in cu uși glisante cu oglindă și profile LED.' },
+            { cat: 'dressing', src: 'Avocat/Dressing.jpeg', title: 'Dressing cu Uși Glisante', desc: 'Bare retractabile, sertare și coșuri metalice extensibile.' },
+            { cat: 'dressing', src: PD(B, 3), title: 'Dressing Walk-in', desc: 'Rafturi pe ambele laturi, sertare și mânere negre.' },
+            { cat: 'dressing', src: PD(B, 1), title: 'Dressing Nuc – Rafturi și Sertare', desc: 'Compartimentare largă, cu sertare cu mânere negre.' },
+
+            // ---- Dulapuri & Birouri
+            { cat: 'dulapuri', srcs: [PD(C, 1), PD(C, 0), PD(C, 3)], title: 'Birou Matty', desc: 'Model nou ACI: PAL și lemn de fag, 115 × 50 × 77 cm, sertar + dulapior și glisiere cu închidere lentă.' },
+            { cat: 'dulapuri', src: PD(A, 13), title: 'Dulapuri Depozitare Gri', desc: 'Cinci uși, mânere inox și picioruși reglabili, adaptate spațiului.' },
+            { cat: 'dulapuri', src: PD(A, 11), title: 'Dulapuri Depozitare – Interior', desc: 'Rafturi reglabile și compartimente pentru arhivă.' },
+            { cat: 'dulapuri', src: PD(C, 4), title: 'Bibliotecă cu Uși', desc: 'Corp deschis cu rafturi și dulap cu uși și cheie, în decor stejar.' },
+            { cat: 'dulapuri', src: PD(C, 5), title: 'Dulap Stejar cu 3 Uși', desc: 'Dulap înalt, cu mânere metalice.' },
+            { cat: 'dulapuri', src: PD(C, 6), title: 'Dulap Stejar – Interior', desc: 'Bară de haine, rafturi și compartimente.' },
+            { cat: 'dulapuri', src: 'babi/dulap2.jpeg', title: 'Dulap Mare cu Uși Glisante', desc: 'Dulap lat, cu picioruși reglabili.' },
+            { cat: 'dulapuri', src: 'babi/dulap.jpeg', title: 'Dulap cu Uși Glisante și Sertare', desc: 'Uși glisante, sertare pe glisiere și compartiment deschis.' },
+            { cat: 'dulapuri', src: PD(A, 9), title: 'Mobilier pentru Grădiniță', desc: 'Uși glisante, dulapuri cu cheie și corpuri de tavan.' },
+            { cat: 'dulapuri', src: PD(A, 8), title: 'Dulap Grădiniță – Interior', desc: 'Bară, cuiere și raft, cu încuietoare.' },
+            { cat: 'dulapuri', src: PD(A, 10), title: 'Ansamblu de Dulapuri și Birou', desc: 'Dulapuri înalte, plus un birou încastrat pe colț.' }
+        ];
+
+        const gallery = document.getElementById('portfolioGallery');
+        const filters = document.getElementById('filters');
+        const countEl = document.getElementById('resultsCount');
+        let visible = []; // indicii pozelor din filtrul curent (pentru lightbox)
+
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+
+        // Butoane filtre
+        CATEGORIES.forEach(([key, label]) => {
+            const b = document.createElement('button');
+            b.className = 'filter-btn' + (key === 'all' ? ' active' : '');
+            b.textContent = label;
+            b.addEventListener('click', () => filterCategory(key, b));
+            filters.appendChild(b);
+        });
+
+        // Lista plată de poze (un card poate avea mai multe), folosită de lightbox
+        const SLIDES = [];
+        ITEMS.forEach((it, i) => {
+            (it.srcs || [it.src]).forEach(src => SLIDES.push({ src: src, title: it.title, item: i }));
+        });
+
+        // Carduri
+        let slideNo = 0;
+        ITEMS.forEach((it, i) => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card';
+            card.dataset.category = it.cat;
+            const list = it.srcs || [it.src];
+            const imgs = list.map((src, k) =>
+                '<img src="' + encodeURI(src) + '" alt="' + esc(it.title) + (list.length > 1 ? ' – ' + (k + 1) : '') + '" loading="lazy" data-slide="' + (slideNo + k) + '"' + (it.pos ? ' style="object-position:' + it.pos[k] + '"' : '') + '>'
+            ).join('');
+            slideNo += list.length;
+            const media = '<div class="gallery-img-box' + (list.length > 1 ? ' collage' : '') + (it.wide ? ' wide' : '') + '">' + imgs + '<span class="category-badge">' + LABELS[it.cat] + '</span></div>';
+            card.innerHTML = media + '<div class="gallery-info"><h3>' + esc(it.title) + '</h3><p>' + esc(it.desc) + '</p></div>';
+            card.querySelectorAll('img').forEach(img => img.addEventListener('click', () => openLightbox(parseInt(img.dataset.slide, 10))));
+            gallery.appendChild(card);
+        });
+
+        function filterCategory(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            let n = 0;
+            document.querySelectorAll('.gallery-card').forEach(card => {
+                const show = category === 'all' || card.dataset.category === category;
+                card.classList.toggle('hidden', !show);
+                if (show) n++;
+            });
+            countEl.textContent = n + (n === 1 ? ' proiect' : ' proiecte');
+            visible = [];
+            SLIDES.forEach((sl, idx) => {
+                if (category === 'all' || ITEMS[sl.item].cat === category) visible.push(idx);
             });
         }
+        filterCategory('all', filters.firstChild);
+
+        // Deschide direct o categorie: Portofoliu.html#bucatarii, #living, #dormitor, #dressing, #dulapuri
+        function fromHash() {
+            const k = location.hash.slice(1);
+            const i = CATEGORIES.findIndex(c => c[0] === k);
+            if (i > 0) filterCategory(k, filters.children[i]);
+        }
+        fromHash();
+        addEventListener('hashchange', fromHash);
+
+        // Meniu mobil
+        const burger = document.getElementById('burger'), drawer = document.getElementById('drawer');
+        burger.addEventListener('click', () => { drawer.hidden = !drawer.hidden; });
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { drawer.hidden = true; }));
+
+        // Lightbox
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbCap = document.getElementById('lbCaption');
+        let pos = 0;
+
+        function showCurrent() {
+            const it = SLIDES[visible[pos]];
+            lbImg.src = encodeURI(it.src);
+            lbImg.alt = it.title;
+            lbCap.textContent = it.title;
+        }
+        function openLightbox(i) {
+            pos = Math.max(0, visible.indexOf(i));
+            showCurrent();
+            lb.classList.add('open');
+        }
+        function closeLightbox() { lb.classList.remove('open'); lbImg.removeAttribute('src'); }
+        function step(d) { pos = (pos + d + visible.length) % visible.length; showCurrent(); }
+
+        document.getElementById('lbClose').addEventListener('click', closeLightbox);
+        document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+        document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); step(1); });
+        lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+        document.addEventListener('keydown', e => {
+            if (!lb.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') step(-1);
+            if (e.key === 'ArrowRight') step(1);
+        });
     </script>
 </body>
 </html>
