@@ -372,8 +372,9 @@ b.onclick=()=>{d.hidden=!d.hidden};d.querySelectorAll('a').forEach(a=>a.onclick=
 
 // ---- Cerere de ofertă: e-mail automat prin FormSubmit (fără server propriu) ----
 // Primul mesaj trimis de pe site declanșează un e-mail de ACTIVARE pe adresa de mai jos; după confirmare, cererile vin automat.
-const OFFER_EMAIL = 'actualcipinvest@gmail.com';
-const OFFER_ENDPOINT = 'https://formsubmit.co/ajax/' + OFFER_EMAIL;
+const OFFER_EMAIL = 'actualcipinvest@gmail.com';                 // doar pentru afișare în mesaje
+const OFFER_FORM_ID = '4c90e6ae0960b46ea0cd3459595d20ca';        // codul primit de la FormSubmit (ascunde adresa de e-mail)
+const OFFER_ENDPOINT = 'https://formsubmit.co/ajax/' + OFFER_FORM_ID;
 
 const qf = document.getElementById('qf'), qsend = document.getElementById('qsend'), qstatus = document.getElementById('qstatus');
 const val = s => ((document.querySelector(s) || {}).value || '').trim();
@@ -439,10 +440,19 @@ qf.addEventListener('submit', async e => {
       body: JSON.stringify(payload)
     });
     const j = await r.json().catch(() => ({}));
-    if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || 'eroare');
+    if (!r.ok || String(j.success) !== 'true') {
+      console.warn('FormSubmit a răspuns:', r.status, j);   // vezi motivul exact în consola browserului (F12)
+      throw new Error(j.message || ('HTTP ' + r.status));
+    }
     showStatus('ok', '<i class="fa-solid fa-circle-check"></i> <b>Mulțumim, ' + d.nume.replace(/[<>&"]/g, '') + '!</b> Cererea a fost trimisă. Te sunăm în cel mai scurt timp, în programul L–V 08:00–16:00.');
     qf.reset();
   } catch (err) {
+    console.warn('Cererea de ofertă nu a fost trimisă:', err.message);
+    if (/activat/i.test(err.message)) {
+      // apare doar până când proprietarul confirmă adresa de e-mail în FormSubmit
+      showStatus('err', 'Formularul așteaptă activarea: verifică e-mailul <b>' + OFFER_EMAIL + '</b> (și folderul Spam) pentru mesajul de la FormSubmit și apasă „Activate Form”. Până atunci, scrie-ne pe <a href="https://wa.me/40722252414?text=' + encodeURIComponent(offerText(d)) + '" style="text-decoration:underline">WhatsApp</a>.');
+      return;
+    }
     showStatus('err', 'Cererea nu a putut fi trimisă acum. Te rugăm să ne scrii pe <a href="https://wa.me/40722252414?text=' + encodeURIComponent(offerText(d)) + '" style="text-decoration:underline">WhatsApp</a> sau să ne suni la <a href="tel:0722252414" style="text-decoration:underline">0722 252 414</a>.');
   } finally {
     qsend.disabled = false;
