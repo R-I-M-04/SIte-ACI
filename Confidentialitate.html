@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+<!-- Google Analytics 4 + Consent Mode v2 -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{c=localStorage.getItem('aci_consent')}catch(e){}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c==='granted'?'granted':'denied'});})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPR2TQ2HYR"></script>
+<script>gtag('js',new Date());gtag('config','G-TPR2TQ2HYR');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Politica de confidențialitate | ACI - Actual Cip Invest</title>
+<link rel="canonical" href="https://acimobila.ro/Confidentialitate.html">
 <meta name="description" content="Cum folosește Actual Cip Invest SRL (ACI Mobilă) datele trimise prin site.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -90,6 +99,13 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px c
     <li>Harta din pagina principală este afișată de Google Maps, iar fonturile și iconițele sunt încărcate de la Google Fonts și cdnjs (Cloudflare). Aceste servicii pot primi adresa IP a dispozitivului tău.</li>
   </ul>
 
+  <h2>Statistici de trafic (Google Analytics)</h2>
+  <ul>
+    <li>Dacă accepți în bannerul de cookie-uri, folosim <b>Google Analytics</b> (Google Ireland Ltd.) ca să vedem, în mod agregat, câți vizitatori are site-ul, de unde vin și ce pagini citesc. Nu folosim aceste date pentru reclame.</li>
+    <li>Dacă refuzi, Google Analytics nu salvează cookie-uri pe dispozitivul tău.</li>
+    <li>Îți poți schimba oricând alegerea: <a href="#" onclick="try{localStorage.removeItem('aci_consent')}catch(e){};location.reload();return false;">resetează preferința pentru cookie-uri</a>.</li>
+  </ul>
+
   <h2>Drepturile tale</h2>
   <p>Ai dreptul să ceri accesul la date, corectarea sau ștergerea lor, restricționarea prelucrării, portabilitatea și să îți retragi acordul oricând. Scrie-ne la <a href="mailto:actualcipinvest@gmail.com">actualcipinvest@gmail.com</a>. Dacă ești nemulțumit, poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">dataprotection.ro</a>).</p>
 
@@ -97,5 +113,23 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px c
 </main>
 
 <footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+
+<!-- Consimțământ cookie-uri (Google Analytics) -->
+<div id="aci-ck" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:#1c1a17;color:#fff;border-radius:14px;padding:14px 16px;font:14px/1.45 system-ui,-apple-system,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.35)">
+  Folosim Google Analytics ca să vedem câți oameni vizitează site-ul și ce pagini îi interesează. Ești de acord? <a href="Confidentialitate.html" style="color:#e0b84a">Detalii</a>
+  <div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end">
+    <button type="button" data-c="denied" style="background:transparent;color:#fff;border:1px solid #777;border-radius:10px;padding:8px 14px;font:inherit;cursor:pointer">Refuz</button>
+    <button type="button" data-c="granted" style="background:#e0b84a;color:#1c1a17;border:0;border-radius:10px;padding:8px 16px;font:inherit;font-weight:600;cursor:pointer">Accept</button>
+  </div>
+</div>
+<script>
+(function(){var b=document.getElementById('aci-ck'),v=null;try{v=localStorage.getItem('aci_consent')}catch(e){}
+if(!v)b.hidden=false;
+b.addEventListener('click',function(e){var c=e.target.getAttribute&&e.target.getAttribute('data-c');if(!c)return;try{localStorage.setItem('aci_consent',c)}catch(_){}gtag('consent','update',{analytics_storage:c});b.hidden=true;});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(h.indexOf('tel:')===0)gtag('event','click_telefon');else if(h.indexOf('wa.me')>-1)gtag('event','click_whatsapp');else if(h.indexOf('mailto:')===0)gtag('event','click_email');});
+document.addEventListener('submit',function(){gtag('event','generate_lead');},true);
+})();
+</script>
 </body>
 </html>
