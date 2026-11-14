@@ -217,6 +217,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
         const ITEMS = [
             // ---- Bucătării
             { cat: 'bucatarii', wide: true, srcs: ['Bucatarie R/Buc1.jpeg', 'Bucatarie R/Buc2.jpeg', 'Bucatarie R/Buc3.jpeg'], pos: ['50% 50%', '60% 40%', '50% 35%'], title: 'Bucătărie Modernă Capucino cu LED', desc: 'Corpuri suspendate până în tavan, blat în decor stejar, iluminare LED, uscător de vase și coș de gunoi integrat.' },
+            { cat: 'bucatarii', src: 'Bucatarie R/Schita.jpeg', fit: 'contain', title: 'Proiectul bucătăriei capucino', desc: 'Așa arată proiectul pe care îl primești înainte de execuție: fiecare corp cu dimensiunile lui (5,20 × 2,13 m). Bucătăria montată e chiar în cardul de mai sus.' },
             { cat: 'bucatarii', src: PD(A, 16), title: 'Bucătărie Clasică Antracit', desc: 'Fronturi frezate, vopsite mat în gri antracit.' },
             { cat: 'bucatarii', src: PD(A, 0), title: 'Insulă de Bucătărie', desc: 'Insulă centrală spațioasă, cu fronturi mat și mânere negre.' },
             { cat: 'bucatarii', src: PD(A, 18), title: 'Bucătărie în Decor de Piatră', desc: 'Bucătărie compactă și îngrijită, cu blat și fronturi în decor de piatră.' },
@@ -293,7 +294,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
             card.dataset.category = it.cat;
             const list = it.srcs || [it.src];
             const imgs = list.map((src, k) =>
-                '<img src="' + encodeURI(src) + '" alt="' + esc(it.title) + (list.length > 1 ? ' – ' + (k + 1) : '') + '" loading="lazy" data-slide="' + (slideNo + k) + '"' + (it.pos ? ' style="object-position:' + it.pos[k] + '"' : '') + '>'
+                '<img src="' + encodeURI(src) + '" alt="' + esc(it.title) + (list.length > 1 ? ' – ' + (k + 1) : '') + '" loading="lazy" data-slide="' + (slideNo + k) + '"' + (it.pos ? ' style="object-position:' + it.pos[k] + '"' : '') + (it.fit ? ' style="object-fit:' + it.fit + ';background:#f4f4f2"' : '') + '>'
             ).join('');
             slideNo += list.length;
             const media = '<div class="gallery-img-box' + (list.length > 1 ? ' collage' : '') + (it.wide ? ' wide' : '') + '">' + imgs + '<span class="category-badge">' + LABELS[it.cat] + '</span></div>';

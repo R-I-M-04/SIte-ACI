@@ -137,6 +137,19 @@ section{padding:56px 0}
 .steps b{display:block;font-size:1.02rem}
 .steps p{color:var(--muted);font-size:.9rem}
 @media(min-width:900px){.steps{grid-template-columns:repeat(5,1fr);gap:18px}.steps li{padding:56px 0 0}.steps li:after{left:44px;right:-18px;top:19px;width:auto;height:2px;bottom:auto}}
+/* din schiță, în realitate */
+.plan{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.plan h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem}
+.plan .lead{font-size:.9rem;margin-top:4px}
+.plan-grid{display:grid;gap:12px;margin-top:14px}
+@media(min-width:700px){.plan-grid{grid-template-columns:1fr 1fr}}
+.plan figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f4f4f2}
+.plan figure a{display:block}
+.plan img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.plan img.sk{object-fit:contain}
+.plan figcaption{display:flex;align-items:center;gap:8px;padding:10px 12px;font-size:.85rem;font-weight:700;background:#fff;border-top:1px solid var(--line)}
+.plan figcaption span{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-size:.75rem;flex:none}
+.plan figcaption small{margin-left:auto;color:var(--muted);font-weight:600;white-space:nowrap}
 
 /* MATERIALS */
 .mat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
@@ -195,6 +208,10 @@ details p{padding:0 18px 18px;color:var(--muted);font-size:.93rem}
 .zones{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:18px}
 .zones a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700}
 .zones a i{color:var(--gold)}
+.zones div{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.zones div i{color:var(--gold);font-size:1.2rem}
+.zones div b{display:block}
+.zones div small{color:var(--muted);font-size:.82rem}
 .zones a:hover{border-color:var(--gold)}
 @media(min-width:900px){.contact{grid-template-columns:1fr 1fr;align-items:stretch}.map{height:auto;min-height:0}}
 footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;font-size:.82rem}
@@ -549,6 +566,17 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
     <li><b>Producem</b><p>Mobilierul se execută în atelierul nostru din Răzvad.</p></li>
     <li><b>Montăm</b><p>Livrăm și montăm, gata de folosit.</p></li>
   </ol>
+  <div class="plan">
+    <span class="eyebrow">Exemplu real</span>
+    <h3>Din schiță, în realitate</h3>
+    <p class="lead">Înainte să tăiem prima placă, primești proiectul cu fiecare corp și dimensiunile lui. Asta e bucătăria capucino de mai sus: întâi pe hârtie, apoi montată.</p>
+    <div class="plan-grid">
+      <figure><a href="Bucatarie%20R/Schita.jpeg" target="_blank" rel="noopener"><img class="sk" src="Bucatarie%20R/Schita.jpeg" alt="Proiectul tehnic al bucătăriei capucino, cu dimensiuni: 5,20 m lungime și 2,13 m înălțime" loading="lazy" width="1499" height="844"></a>
+        <figcaption><span>1</span> Proiectul cu dimensiuni <small><i class="fa-solid fa-magnifying-glass-plus"></i> mărește</small></figcaption></figure>
+      <figure><a href="Portofoliu.html#bucatarii"><img src="Bucatarie%20R/Buc1.jpeg" alt="Bucătăria capucino montată, cu iluminare LED" loading="lazy" width="1600" height="810"></a>
+        <figcaption><span>2</span> Bucătăria montată <small>vezi portofoliul</small></figcaption></figure>
+    </div>
+  </div>
 </div></section>
 
 <!-- MATERIALE -->
@@ -602,7 +630,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <details><summary>În cât timp e gata mobilierul?</summary><p>Termenul depinde de complexitatea proiectului și îl primești în scris, odată cu oferta.</p></details>
   <details><summary>Veniți la măsurători?</summary><p>Da, măsurătorile se fac la fața locului, ca mobilierul să se potrivească exact spațiului.</p></details>
   <details><summary>Lucrați și pentru firme sau instituții?</summary><p>Da: birouri, arhive, mobilier pentru grădinițe și spații comerciale.</p></details>
-  <details><summary>În ce zone livrați și montați?</summary><p>Atelierul nostru e în Răzvad, pe DN72, între Târgoviște și Ploiești. Livrăm și montăm în tot județul Dâmbovița (Târgoviște, Moreni, Pucioasa, Fieni, Găești, Titu și comunele din jur) și în județul Prahova (Ploiești, Câmpina, Băicoi, Breaza, Comarnic, Sinaia și împrejurimi). Pentru alte localități, scrie-ne și îți confirmăm.</p></details>
+  <details><summary>În ce zone livrați și montați?</summary><p>Atelierul nostru e în Răzvad, pe DN72, între Târgoviște și Ploiești. Venim la măsurători, livrăm și montăm în județele Dâmbovița și Prahova. Pentru alt județ, scrie-ne și îți confirmăm.</p></details>
 </div></section>
 
 <!-- ZONE DESERVITE -->
@@ -611,12 +639,10 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <h2 class="h2">Mobilă la comandă în Dâmbovița și Prahova</h2>
   <p class="lead" style="margin-top:10px;color:var(--muted)">Atelierul e în Răzvad, pe DN72, între Târgoviște și Ploiești. Venim la măsurători, livrăm și montăm în ambele județe.</p>
   <div class="zones">
-    <a href="mobila-la-comanda-targoviste.html"><i class="fa-solid fa-location-dot"></i> Târgoviște</a>
-    <a href="mobila-la-comanda-ploiesti.html"><i class="fa-solid fa-location-dot"></i> Ploiești</a>
-    <a href="mobila-la-comanda-campina.html"><i class="fa-solid fa-location-dot"></i> Câmpina</a>
-    <a href="mobila-la-comanda-pucioasa.html"><i class="fa-solid fa-location-dot"></i> Pucioasa și Fieni</a>
+    <div><i class="fa-solid fa-location-dot"></i><span><b>Județul Dâmbovița</b><small>măsurători, livrare și montaj</small></span></div>
+    <div><i class="fa-solid fa-location-dot"></i><span><b>Județul Prahova</b><small>măsurători, livrare și montaj</small></span></div>
   </div>
-  <p style="margin-top:12px;font-size:.92rem;color:var(--muted)">Și în: Moreni, Găești, Titu, Răzvad, Gura Ocniței, Ulmi, Aninoasa, Doicești, Văcărești, Șotânga, Băicoi, Florești, Filipeștii de Pădure, Breaza, Comarnic, Sinaia, Bucov, Blejoi.</p>
+  <p style="margin-top:12px;font-size:.92rem;color:var(--muted)">Ești din alt județ? <a href="Oferta.html" style="color:var(--gold-d);font-weight:700">Cere o ofertă</a> sau scrie-ne și îți confirmăm.</p>
 </div></section>
 
 <!-- CONTACT -->

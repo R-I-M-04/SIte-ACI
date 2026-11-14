@@ -139,6 +139,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
 
 /* câmpuri */
 .f{width:100%;font:inherit;font-size:16px;padding:14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+select.f{appearance:none;-webkit-appearance:none;padding-right:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23a17c1a' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 16px center}
 .f:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(197,155,39,.15)}
 .f.bad{border-color:var(--err)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -254,10 +255,55 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px;f
     <!-- PAS 2: SPAȚIUL -->
     <div class="step" data-step="2" data-title="Despre spațiu">
       <div class="q">
-        <label for="loc">Localitatea <span class="req">*</span></label>
+        <label for="loc">Județul <span class="req">*</span></label>
         <span class="hint">Ca să știm unde venim la măsurători și montaj.</span>
-        <input class="f" id="loc" name="loc" placeholder="ex: Târgoviște" autocomplete="address-level2">
-        <p class="err-msg" data-err="loc" hidden>Scrie localitatea.</p>
+        <select class="f" id="loc" name="loc">
+          <option value="">Alege județul</option>
+          <option>Dâmbovița</option>
+          <option>Prahova</option>
+          <option disabled>──────────</option>
+          <option>Alba</option>
+          <option>Arad</option>
+          <option>Argeș</option>
+          <option>Bacău</option>
+          <option>Bihor</option>
+          <option>Bistrița-Năsăud</option>
+          <option>Botoșani</option>
+          <option>Brăila</option>
+          <option>Brașov</option>
+          <option>București</option>
+          <option>Buzău</option>
+          <option>Călărași</option>
+          <option>Caraș-Severin</option>
+          <option>Cluj</option>
+          <option>Constanța</option>
+          <option>Covasna</option>
+          <option>Dolj</option>
+          <option>Galați</option>
+          <option>Giurgiu</option>
+          <option>Gorj</option>
+          <option>Harghita</option>
+          <option>Hunedoara</option>
+          <option>Ialomița</option>
+          <option>Iași</option>
+          <option>Ilfov</option>
+          <option>Maramureș</option>
+          <option>Mehedinți</option>
+          <option>Mureș</option>
+          <option>Neamț</option>
+          <option>Olt</option>
+          <option>Sălaj</option>
+          <option>Satu Mare</option>
+          <option>Sibiu</option>
+          <option>Suceava</option>
+          <option>Teleorman</option>
+          <option>Timiș</option>
+          <option>Tulcea</option>
+          <option>Vâlcea</option>
+          <option>Vaslui</option>
+          <option>Vrancea</option>
+        </select>
+        <p class="err-msg" data-err="loc" hidden>Alege județul.</p>
       </div>
       <div class="q">
         <span class="ql">Dimensiunile</span>
@@ -575,7 +621,7 @@ function collect() {
     'Interval apel': one(sel.interval),
     'Camere / mobilier': list(sel.camere),
     'Situație': one(sel.situatie),
-    'Localitate': v('loc'),
+    'Județ': v('loc'),
     'Măsurători / dimensiuni': dims
   };
   if (has('Bucătărie')) Object.assign(d, { 'Bucătărie – formă': one(sel.forma_bucatarie), 'Bucătărie – electrocasnice': list(sel.electrocasnice), 'Bucătărie – blat': one(sel.blat) });
@@ -602,7 +648,7 @@ function collect() {
 function buildSummary() {
   const d = collect();
   const skip = ['Nume', 'Telefon', 'E-mail client', 'Contact preferat', 'Interval apel', 'Trimis la', 'Alte detalii', 'De unde a aflat'];
-  const back = { 'Camere / mobilier': 1, 'Situație': 1, 'Localitate': 2, 'Măsurători / dimensiuni': 2, 'Stil': 3, 'Culori': 3, 'Fronturi': 3, 'Mânere': 3, 'Inspirație din portofoliu': 3, 'Termen': 4, 'Tip spațiu montaj': 4, 'Stadiul spațiului': 4, 'Acces': 4, 'Oferta să includă': 4 };
+  const back = { 'Camere / mobilier': 1, 'Situație': 1, 'Județ': 2, 'Măsurători / dimensiuni': 2, 'Stil': 3, 'Culori': 3, 'Fronturi': 3, 'Mânere': 3, 'Inspirație din portofoliu': 3, 'Termen': 4, 'Tip spațiu montaj': 4, 'Stadiul spațiului': 4, 'Acces': 4, 'Oferta să includă': 4 };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   $('#sum').innerHTML = Object.entries(d).filter(([k]) => !skip.includes(k)).map(([k, val]) =>
     `<div><dt>${esc(k)}</dt><dd>${esc(val)} <button type="button" class="edit" data-go="${back[k] || 2}">modifică</button></dd></div>`).join('');
@@ -615,7 +661,7 @@ $('#send').onclick = async () => {
   if (!validate(5)) return;
   const d = collect();
   const payload = Object.assign({
-    _subject: `Cerere ofertă: ${list(sel.camere)} – ${d['Nume']} (${d['Localitate']})`,
+    _subject: `Cerere ofertă: ${list(sel.camere)} – ${d['Nume']} (jud. ${d['Județ']})`,
     _template: 'table',
     _captcha: 'false'
   }, d);
