@@ -1,6 +1,6 @@
 # ACI Mobilă – Actual Cip Invest SRL
 
-> Atelier de mobilă la comandă din Răzvad, județul Dâmbovița, România (pe DN72, între Târgoviște și Ploiești). Proiectează, produce și montează bucătării, dressinguri, dormitoare, mobilier de living și mobilier de birou pe dimensiunile clientului, pentru Târgoviște, județul Dâmbovița și județul Prahova.
+> Atelier de mobilă la comandă din Răzvad, județul Dâmbovița, România (pe DN72). Proiectează, produce și montează bucătării, dressinguri, dormitoare, mobilier de living și mobilier de birou pe dimensiunile clientului, pentru județele Dâmbovița, Prahova, Argeș, Ilfov, Giurgiu, Teleorman, Brașov și municipiul București.
 
 ## Date de contact
 
@@ -31,15 +31,18 @@
 
 ## Zone deservite
 
-- Județul Dâmbovița: Târgoviște, Răzvad, Gura Ocniței, Ulmi, Aninoasa, Doicești, Văcărești, Șotânga, Moreni, Pucioasa, Fieni, Găești, Titu și împrejurimi
-- Județul Prahova: Ploiești, Câmpina, Băicoi, Breaza, Comarnic, Sinaia și împrejurimi
+- Județul Dâmbovița (județul atelierului)
+- Județul Prahova
+- Județul Argeș
+- Municipiul București și județul Ilfov
+- Județele Giurgiu, Teleorman și Brașov
 
 ## Pagini
 
 - [Acasă](https://acimobila.ro/): prezentare, servicii, lucrări, întrebări frecvente, contact
 - [Portofoliu](https://acimobila.ro/Portofoliu.html): lucrări reale din atelier
 - [Cere ofertă](https://acimobila.ro/Oferta.html): formular de ofertă
-- [Mobilă la comandă Târgoviște](https://acimobila.ro/mobila-la-comanda-targoviste.html)
-- [Mobilă la comandă Ploiești și Prahova](https://acimobila.ro/mobila-la-comanda-ploiesti.html)
-- [Mobilă la comandă Câmpina și Valea Prahovei](https://acimobila.ro/mobila-la-comanda-campina.html)
-- [Mobilă la comandă Pucioasa și Fieni](https://acimobila.ro/mobila-la-comanda-pucioasa.html)
+- [Mobilă la comandă Dâmbovița](https://acimobila.ro/mobila-la-comanda-dambovita.html)
+- [Mobilă la comandă Prahova](https://acimobila.ro/mobila-la-comanda-prahova.html)
+- [Mobilă la comandă Argeș](https://acimobila.ro/mobila-la-comanda-arges.html)
+- [Mobilă la comandă București și Ilfov](https://acimobila.ro/mobila-la-comanda-bucuresti-ilfov.html)
