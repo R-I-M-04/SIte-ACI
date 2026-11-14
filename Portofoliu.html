@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Portofoliu Mobilă la Comandă | ACI - Actual Cip Invest Răzvad</title>
 <meta name="description" content="Lucrări reale ACI: bucătării, living, dormitoare, dressinguri, dulapuri și birouri, realizate în atelierul nostru din Răzvad, Dâmbovița.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="ACI Mobilă">
+<meta property="og:title" content="Portofoliu ACI Mobilă – lucrări reale">
+<meta property="og:description" content="Bucătării, living, dormitoare, dressinguri, dulapuri și birouri realizate în atelierul ACI din Răzvad.">
+<meta property="og:url" content="https://actualcipinvest.netlify.app/portofoliu">
+<meta property="og:image" content="https://actualcipinvest.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -90,7 +102,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
 @media(min-width:800px){.cta{grid-template-columns:1fr auto;align-items:center;padding:34px}.cta .two{min-width:380px}}
 
 /* LIGHTBOX */
-.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(20,18,16,.96);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox{touch-action:pan-y;position:fixed;inset:0;z-index:2000;background:rgba(20,18,16,.96);display:none;align-items:center;justify-content:center;padding:20px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:100%;max-height:80vh;border-radius:10px;object-fit:contain}
 .lb-caption{position:absolute;bottom:calc(22px + var(--safe-b));left:0;right:0;text-align:center;color:#fff;font-weight:600;padding:0 70px}
@@ -165,7 +177,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <div class="lb-caption" id="lbCaption"></div>
 </div>
 
-<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița · <a href="Confidentialitate.html" style="color:inherit;text-decoration:underline">Confidențialitate</a></footer>
 
 <nav class="bar">
   <a class="c" href="tel:0722252414"><i class="fa-solid fa-phone"></i> Sună</a>
@@ -309,10 +321,22 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
         fromHash();
         addEventListener('hashchange', fromHash);
 
-        // Meniu mobil
-        const burger = document.getElementById('burger'), drawer = document.getElementById('drawer');
-        burger.addEventListener('click', () => { drawer.hidden = !drawer.hidden; });
-        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { drawer.hidden = true; }));
+
+// Meniu mobil: se deschide/închide din buton, se închide la atingere în afara lui sau cu Escape
+(function () {
+  const bt = document.getElementById('burger'), dr = document.getElementById('drawer');
+  if (!bt || !dr) return;
+  bt.setAttribute('aria-controls', 'drawer'); bt.setAttribute('aria-expanded', 'false');
+  const set = open => {
+    dr.hidden = !open;
+    bt.setAttribute('aria-expanded', open);
+    bt.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  };
+  bt.addEventListener('click', e => { e.stopPropagation(); set(dr.hidden); });
+  document.addEventListener('click', e => { if (!dr.hidden && !dr.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !dr.hidden) set(false); });
+  dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+})();
 
         // Lightbox
         const lb = document.getElementById('lightbox');
@@ -330,8 +354,18 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
             pos = Math.max(0, visible.indexOf(i));
             showCurrent();
             lb.classList.add('open');
+            document.documentElement.style.overflow = 'hidden';   // pagina din spate stă pe loc
         }
-        function closeLightbox() { lb.classList.remove('open'); lbImg.removeAttribute('src'); }
+        function closeLightbox() { lb.classList.remove('open'); lbImg.removeAttribute('src'); document.documentElement.style.overflow = ''; }
+
+        // Glisare cu degetul: stânga/dreapta = altă poză, în jos = închide
+        let tx = 0, ty = 0;
+        lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+        lb.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+            if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+            else if (dy > 80 && Math.abs(dy) > Math.abs(dx)) closeLightbox();
+        }, { passive: true });
         function step(d) { pos = (pos + d + visible.length) % visible.length; showCurrent(); }
 
         document.getElementById('lbClose').addEventListener('click', closeLightbox);

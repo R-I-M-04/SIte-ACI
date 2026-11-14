@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Cere o Ofertă | ACI - Mobilă la Comandă Răzvad, Dâmbovița</title>
 <meta name="description" content="Cere o ofertă pentru mobilă la comandă în 2 minute: bucătării, dressinguri, dormitoare, living și mobilier de birou. Atelier ACI, Răzvad, Dâmbovița.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="ACI Mobilă">
+<meta property="og:title" content="Cere o ofertă – ACI Mobilă">
+<meta property="og:description" content="Cere o ofertă pentru mobilă la comandă în 2 minute, direct de pe telefon.">
+<meta property="og:url" content="https://actualcipinvest.netlify.app/oferta">
+<meta property="og:image" content="https://actualcipinvest.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a1918">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,6 +143,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
 .tip i{margin-top:3px}
 .check{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);cursor:pointer}
 .check input{width:22px;height:22px;accent-color:var(--gold);flex:none;margin-top:1px}
+.q>label.check{display:flex;font-weight:500;font-size:.88rem;margin:0}
 
 /* rezumat */
 .summary{background:var(--bg);border-radius:14px;margin-top:6px}
@@ -395,7 +408,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px;f
       <details class="summary" id="sumBox"><summary>Verifică ce ai completat <i class="fa-solid fa-chevron-down"></i></summary><dl id="sum"></dl></details>
 
       <div class="q" style="margin-top:18px">
-        <label class="check"><input type="checkbox" id="gdpr"><span>Sunt de acord ca ACI (Actual Cip Invest SRL) să folosească aceste date doar pentru a mă contacta în legătură cu oferta. <span class="req">*</span></span></label>
+        <label class="check"><input type="checkbox" id="gdpr"><span>Sunt de acord ca ACI (Actual Cip Invest SRL) să folosească aceste date doar pentru a mă contacta în legătură cu oferta. <a href="Confidentialitate.html" target="_blank" rel="noopener" style="color:var(--gold-d);font-weight:700">Politica de confidențialitate</a> <span class="req">*</span></span></label>
         <p class="err-msg" data-err="gdpr" hidden>Bifează acordul ca să putem trimite cererea.</p>
       </div>
       <div class="fail" id="fail" hidden></div>
@@ -429,7 +442,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px;f
   <button type="button" class="btn btn-send" id="send" hidden><i class="fa-solid fa-paper-plane"></i> Trimite cererea</button>
 </div></div>
 
-<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița · <a href="Confidentialitate.html" style="color:inherit;text-decoration:underline">Confidențialitate</a></footer>
 
 <script>
 // ===== Configurare trimitere (FormSubmit) =====
@@ -446,7 +459,22 @@ const TEXT_IDS = ['loc', 'dL', 'dH', 'dA', 'posturi', 'inspir', 'nm', 'ph', 'em'
 let step = 1;
 
 // ----- meniu -----
-$('#burger').onclick = () => { $('#drawer').hidden = !$('#drawer').hidden; };
+
+// Meniu mobil: se deschide/închide din buton, se închide la atingere în afara lui sau cu Escape
+(function () {
+  const bt = document.getElementById('burger'), dr = document.getElementById('drawer');
+  if (!bt || !dr) return;
+  bt.setAttribute('aria-controls', 'drawer'); bt.setAttribute('aria-expanded', 'false');
+  const set = open => {
+    dr.hidden = !open;
+    bt.setAttribute('aria-expanded', open);
+    bt.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  };
+  bt.addEventListener('click', e => { e.stopPropagation(); set(dr.hidden); });
+  document.addEventListener('click', e => { if (!dr.hidden && !dr.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !dr.hidden) set(false); });
+  dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+})();
 
 // ----- alegeri (tile / chip / culoare) -----
 $$('[data-g]').forEach(group => {
@@ -628,7 +656,15 @@ function loadDraft() {
   try {
     const raw = localStorage.getItem(DRAFT_KEY); if (!raw) return false;
     const dr = JSON.parse(raw);
-    Object.keys(sel).forEach(k => { if (dr.sel && k in dr.sel) sel[k] = dr.sel[k]; paint(k); });
+    Object.keys(sel).forEach(k => {
+      const group = document.querySelector('[data-g="' + k + '"]');
+      const allowed = [...group.querySelectorAll('[data-v]')].map(b => b.dataset.v);
+      const multi = group.hasAttribute('data-multi');
+      const saved = dr.sel ? dr.sel[k] : undefined;
+      if (multi && Array.isArray(saved)) sel[k] = saved.filter(x => allowed.includes(x));
+      else if (!multi && typeof saved === 'string' && allowed.includes(saved)) sel[k] = saved;
+      paint(k);
+    });
     TEXT_IDS.forEach(id => { if (dr.t && dr.t[id] != null) document.getElementById(id).value = dr.t[id]; });
     $('#gdpr').checked = !!dr.gdpr;
     return dr.step || 1;
@@ -636,7 +672,7 @@ function loadDraft() {
 }
 
 // ----- pornire: ciornă sau ?tip=bucatarii din portofoliu -----
-const TIP = { bucatarii: 'Bucătărie', dressing: 'Dressing', dormitor: 'Dormitor', living: 'Living', dulapuri: 'Birou / firmă', birou: 'Birou / firmă' };
+const TIP = { bucatarii: 'Bucătărie', dressing: 'Dressing', dormitor: 'Dormitor', living: 'Living', birou: 'Birou / firmă' };
 const savedStep = loadDraft();
 const tip = TIP[new URLSearchParams(location.search).get('tip')];
 if (tip && !sel.camere.includes(tip)) { sel.camere.push(tip); paint('camere'); }

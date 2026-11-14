@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ACI - Actual Cip Invest | Mobilă la Comandă Răzvad, Dâmbovița</title>
 <meta name="description" content="Mobilă la comandă în Dâmbovița: bucătării, dressinguri, dormitoare și mobilier de birou, făcute în atelierul ACI din Răzvad.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="ACI Mobilă">
+<meta property="og:title" content="ACI Mobilă – Mobilă la comandă în Dâmbovița">
+<meta property="og:description" content="Bucătării, dressinguri, dormitoare, living și mobilier de birou, făcute în atelierul nostru din Răzvad.">
+<meta property="og:url" content="https://actualcipinvest.netlify.app/">
+<meta property="og:image" content="https://actualcipinvest.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -82,7 +94,7 @@ section{padding:56px 0}
 @media(min-width:900px){.row{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible;margin:22px 0 0;padding:0}.svc{flex:none}}
 
 /* PROJECTS */
-.proj{flex:0 0 86%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.proj{display:block;flex:0 0 86%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .proj .ph{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px;height:230px}
 .proj .ph img{width:100%;height:100%;object-fit:cover;min-height:0}
 .proj .ph img:first-child{grid-row:1/span 2}
@@ -156,9 +168,10 @@ details p{padding:0 18px 18px;color:var(--muted);font-size:.93rem}
 .ci{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;min-height:64px}
 .ci i{width:42px;height:42px;border-radius:50%;background:#f4efe4;color:var(--gold-d);display:grid;place-items:center;flex:none}
 .ci small{display:block;color:var(--muted);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);height:280px;background:#eee}
-.map iframe{width:100%;height:100%;border:0}
-@media(min-width:900px){.contact{grid-template-columns:1fr 1fr}}
+.map{border-radius:14px;overflow:hidden;border:1px solid var(--line);height:280px;background:#eee}
+.map iframe{width:100%;height:100%;border:0;display:block}
+/* pe ecran lat, harta are exact înălțimea listei de contact din stânga */
+@media(min-width:900px){.contact{grid-template-columns:1fr 1fr;align-items:stretch}.map{height:auto;min-height:0}}
 footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;font-size:.82rem}
 
 /* BOTTOM BAR (mobil) */
@@ -223,7 +236,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
     <a class="svc" href="Portofoliu.html#dressing"><img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.15.jpeg" alt="" loading="lazy"><div><h3>Dressinguri</h3><p>Walk-in, cu LED și oglinzi</p></div></a>
     <a class="svc" href="Portofoliu.html#dormitor"><img src="Doctor/Dormitor.jpeg" alt="" loading="lazy"><div><h3>Dormitor</h3><p>Dulapuri, noptiere, toaletă</p></div></a>
     <a class="svc" href="Portofoliu.html#living"><img src="Doctor/Sufragerie.jpeg" alt="" loading="lazy"><div><h3>Living</h3><p>Comode TV, bufete, rafturi</p></div></a>
-    <a class="svc" href="Portofoliu.html#dulapuri"><img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.58 (1).jpeg" alt="" loading="lazy"><div><h3>Birouri & instituții</h3><p>Birouri, arhive, grădinițe</p></div></a>
+    <a class="svc" href="Portofoliu.html#dulapuri"><img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.58 (1).jpeg" alt="" loading="lazy"><div><h3>Birouri & altele</h3><p>Birouri, arhive, grădinițe</p></div></a>
   </div>
 </div></section>
 
@@ -271,7 +284,6 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <h2 class="h2">Spune-ne ce ai nevoie</h2>
   <p class="lead">Completezi în 2 minute, de pe telefon: camera, dimensiunile, stilul și termenul. Noi revenim cu oferta.</p>
   <ul class="qlist">
-    <li><i class="fa-solid fa-hand-pointer"></i> Alegi din variante, scrii foarte puțin</li>
     <li><i class="fa-solid fa-floppy-disk"></i> Se salvează automat dacă închizi pagina</li>
     <li><i class="fa-solid fa-phone"></i> Te contactăm noi, L–V 08:00–16:00</li>
   </ul>
@@ -286,12 +298,9 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <span class="eyebrow">Recenzii</span>
   <h2 class="h2">Ce spun clienții</h2>
   <div class="rev">
-    <div class="g"><i class="fa-brands fa-google"></i><div><b>Actual CIP Invest SRL</b><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div>
-    <p class="lead">Recenziile sunt pe Google, ca să fie verificabile de oricine. Ai lucrat cu noi? Spune-le și altora.</p>
-    <div class="two">
-      <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Actual+CIP+Invest+SRL/@44.936065,25.5106207,17z/data=!3m1!4b1!4m6!3m5!1s0x40b2f70011654be3:0xdbf208061041bc65!8m2!3d44.936065!4d25.5131903!16s%2Fg%2F11zwm_6y6b">Citește</a>
-      <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Actual+CIP+Invest+SRL/@44.936065,25.5106207,17z/data=!3m1!4b1!4m6!3m5!1s0x40b2f70011654be3:0xdbf208061041bc65!8m2!3d44.936065!4d25.5131903!16s%2Fg%2F11zwm_6y6b">Lasă o recenzie</a>
-    </div>
+    <div class="g"><i class="fa-brands fa-google"></i><div><b>Actual CIP Invest SRL</b><div style="color:var(--muted);font-size:.85rem">Recenzii pe Google Maps</div></div></div>
+    <p class="lead">Recenziile noastre sunt pe Google, unde oricine le poate verifica. Ai lucrat cu noi? Lasă-ne și tu o recenzie acolo.</p>
+    <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Actual+CIP+Invest+SRL/@44.936065,25.5106207,17z/data=!3m1!4b1!4m6!3m5!1s0x40b2f70011654be3:0xdbf208061041bc65!8m2!3d44.936065!4d25.5131903!16s%2Fg%2F11zwm_6y6b"><i class="fa-brands fa-google"></i> Vezi și lasă o recenzie pe Google</a>
   </div>
 </div></section>
 
@@ -316,13 +325,12 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
       <a class="ci" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp</small><b>Scrie-ne un mesaj</b></div></a>
       <a class="ci" href="mailto:actualcipinvest@gmail.com"><i class="fa-solid fa-envelope"></i><div><small>E-mail</small><b>actualcipinvest@gmail.com</b></div></a>
       <div class="ci"><i class="fa-solid fa-clock"></i><div><small>Program</small><b>Luni–Vineri, 08:00–16:00</b></div></div>
-      <a class="ci" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Actual+CIP+Invest+SRL/@44.936065,25.5106207,17z/data=!3m1!4b1!4m6!3m5!1s0x40b2f70011654be3:0xdbf208061041bc65!8m2!3d44.936065!4d25.5131903!16s%2Fg%2F11zwm_6y6b"><i class="fa-solid fa-location-dot"></i><div><small>Atelier</small><b>Str. Luca nr. 18 C, Răzvad</b></div></a>
     </div>
     <div class="map"><iframe loading="lazy" title="Hartă ACI" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.373973780011!2d25.513190299999998!3d44.936065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2f70011654be3%3A0xdbf208061041bc65!2sActual%20CIP%20Invest%20SRL!5e0!3m2!1sro!2sro!4v1793634146867!5m2!1sro!2sro"></iframe></div>
   </div>
 </div></section>
 
-<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița · <a href="Confidentialitate.html" style="color:inherit;text-decoration:underline">Confidențialitate</a></footer>
 
 <nav class="bar">
   <a class="c" href="tel:0722252414"><i class="fa-solid fa-phone"></i> Sună</a>
@@ -333,16 +341,30 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
 <script>
 const PD=(t,n)=>'Photodump/WhatsApp Image 2026-11-02 at '+t+(n?' ('+n+')':'')+'.jpeg';
 const PROJ=[
-  {t:'Bucătărie modernă capucino',wide:1,i:['Bucatarie R/Buc1.jpeg','Bucatarie R/Buc2.jpeg','Bucatarie R/Buc3.jpeg'],tags:['Bucătărie','LED','Uscător vase']},
-  {t:'Living în lemn natural',i:['Doctor/Sufragerie.jpeg','Doctor/Masuta extensibila.jpeg','Doctor/Sufragerie2.jpeg'],tags:['Living','Lamele','Masă extensibilă']},
-  {t:'Dressing nuc cu LED',i:[PD('21.23.15'),PD('21.23.15',3),PD('21.23.15',1)],tags:['Dressing','Oglindă','LED']},
-  {t:'Dulap alb lucios cu TV',i:[PD('21.23.58',7),PD('21.23.58',10),PD('21.23.58',8)],tags:['Dormitor','Uși glisante']},
-  {t:'Birou Matty',i:[PD('21.23.58',1),PD('21.23.58'),PD('21.23.58',3)],tags:['Birou','PAL + fag']}
+  {t:'Bucătărie modernă capucino',c:'bucatarii',wide:1,i:['Bucatarie R/Buc1.jpeg','Bucatarie R/Buc2.jpeg','Bucatarie R/Buc3.jpeg'],tags:['Bucătărie','LED','Uscător vase']},
+  {t:'Living în lemn natural',c:'living',i:['Doctor/Sufragerie.jpeg','Doctor/Masuta extensibila.jpeg','Doctor/Sufragerie2.jpeg'],tags:['Living','Lamele','Masă extensibilă']},
+  {t:'Dressing nuc cu LED',c:'dressing',i:[PD('21.23.15'),PD('21.23.15',3),PD('21.23.15',1)],tags:['Dressing','Oglindă','LED']},
+  {t:'Dulap alb lucios cu TV',c:'dormitor',i:[PD('21.23.58',7),PD('21.23.58',10),PD('21.23.58',8)],tags:['Dormitor','Uși glisante']},
+  {t:'Birou Matty',c:'dulapuri',i:[PD('21.23.58',1),PD('21.23.58'),PD('21.23.58',3)],tags:['Birou','PAL + fag']}
 ];
-document.getElementById('projRow').innerHTML=PROJ.map(p=>`<article class="proj"><div class="ph${p.wide?' wide':''}">${p.i.map(s=>`<img src="${encodeURI(s)}" alt="${p.t}" loading="lazy">`).join('')}</div><div class="in"><h3>${p.t}</h3><div class="tags">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div></div></article>`).join('');
+document.getElementById('projRow').innerHTML=PROJ.map(p=>`<a class="proj" href="Portofoliu.html#${p.c}"><div class="ph${p.wide?' wide':''}">${p.i.map(s=>`<img src="${encodeURI(s)}" alt="${p.t}" loading="lazy">`).join('')}</div><div class="in"><h3>${p.t} <i class="fa-solid fa-arrow-right" style="font-size:.8em;color:var(--gold)"></i></h3><div class="tags">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div></div></a>`).join('');
 
-const b=document.getElementById('burger'),d=document.getElementById('drawer');
-b.onclick=()=>{d.hidden=!d.hidden};d.querySelectorAll('a').forEach(a=>a.onclick=()=>d.hidden=true);
+
+// Meniu mobil: se deschide/închide din buton, se închide la atingere în afara lui sau cu Escape
+(function () {
+  const bt = document.getElementById('burger'), dr = document.getElementById('drawer');
+  if (!bt || !dr) return;
+  bt.setAttribute('aria-controls', 'drawer'); bt.setAttribute('aria-expanded', 'false');
+  const set = open => {
+    dr.hidden = !open;
+    bt.setAttribute('aria-expanded', open);
+    bt.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  };
+  bt.addEventListener('click', e => { e.stopPropagation(); set(dr.hidden); });
+  document.addEventListener('click', e => { if (!dr.hidden && !dr.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !dr.hidden) set(false); });
+  dr.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+})();
 
 </script>
 </body>
