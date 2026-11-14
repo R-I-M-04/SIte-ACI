@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cere o Ofertă | ACI - Mobilă la Comandă Răzvad, Dâmbovița</title>
+<meta name="description" content="Cere o ofertă pentru mobilă la comandă în 2 minute: bucătării, dressinguri, dormitoare, living și mobilier de birou. Atelier ACI, Răzvad, Dâmbovița.">
+<meta name="theme-color" content="#1a1918">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+[hidden]{display:none!important}
+:root{
+  --ink:#1a1918; --gold:#c59b27; --gold-d:#a17c1a; --gold-soft:#f6eed6;
+  --bg:#fafaf8; --card:#fff; --line:#ebe7df; --muted:#6b6660; --err:#c0392b;
+  --r:16px; --wa:#25d366;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding-bottom:calc(92px + var(--safe-b))}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+
+/* HEADER (identic cu restul site-ului) */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1140px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--gold);display:grid;place-items:center}
+.logo b{font-weight:800;letter-spacing:.06em}
+.logo b span{color:var(--gold)}
+.logo small{display:block;font-size:.58rem;letter-spacing:.18em;color:var(--muted);font-weight:700}
+.nav{display:none;gap:26px;font-weight:600;font-size:.92rem}
+.nav a:hover,.nav a.on{color:var(--gold)}
+.burger{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:1.1rem}
+.drawer{position:fixed;inset:62px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:8px 18px 18px;z-index:49;box-shadow:0 20px 30px rgba(0,0,0,.08)}
+.drawer a{display:flex;justify-content:space-between;padding:15px 2px;border-bottom:1px solid var(--line);font-weight:700}
+@media(min-width:900px){.nav{display:flex}.burger{display:none}}
+
+/* ANTET */
+.page-hero{background:var(--ink);color:#fff;padding:26px 0 70px}
+.page-hero h1{font-size:1.9rem;margin:6px 0 8px}
+.page-hero p{color:#cfc8bc;font-size:.95rem}
+.perks{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:#e5ddcf;font-weight:600}
+.perks i{color:var(--gold);margin-right:5px}
+@media(min-width:700px){.page-hero h1{font-size:2.6rem}}
+
+/* CARD WIZARD */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;margin-top:-50px;position:relative;box-shadow:0 18px 40px rgba(26,25,24,.08)}
+.prog{position:sticky;top:62px;z-index:30;background:#fff;border-radius:20px 20px 0 0;padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+.prog-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.prog-head b{font-size:1rem}
+.prog-head small{color:var(--muted);font-weight:700;white-space:nowrap}
+.bars{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.bars span{height:5px;border-radius:5px;background:var(--line);transition:background .3s}
+.bars span.on{background:var(--gold)}
+.body{padding:18px}
+.step{display:none}
+.step.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q{margin-bottom:24px}
+.q:last-child{margin-bottom:0}
+.q>label,.q .ql{display:block;font-weight:800;font-size:1rem;margin-bottom:4px}
+.q .hint{display:block;color:var(--muted);font-size:.84rem;margin-bottom:12px}
+.req{color:var(--gold-d)}
+.sect{border-top:1px dashed var(--line);padding-top:20px;margin-top:6px}
+.sect-t{display:flex;gap:10px;align-items:center;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);margin-bottom:14px}
+
+/* tile-uri cu poze (alegere camere) */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:600px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;border:2px solid transparent;border-radius:14px;overflow:hidden;aspect-ratio:1/1;background:#ddd;cursor:pointer;padding:0;color:#fff;text-align:left}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(0,0,0,.78))}
+.tile b{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;font-size:.98rem;line-height:1.2}
+.tile .ck{position:absolute;top:9px;right:9px;z-index:1;width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.2);display:grid;place-items:center;font-size:.75rem;color:transparent}
+.tile.sel{border-color:var(--gold)}
+.tile.sel .ck{background:var(--gold);border-color:var(--gold);color:#fff}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 15px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:.93rem;cursor:pointer;text-align:left}
+.chip i{color:var(--muted)}
+.chip.sel{border-color:var(--gold);background:var(--gold-soft);color:#5d470c}
+.chip.sel i{color:var(--gold-d)}
+.chips.col{flex-direction:column}
+.chips.col .chip{border-radius:14px;width:100%;min-height:54px}
+.chips.col .chip i{width:34px;height:34px;border-radius:10px;background:var(--bg);display:grid;place-items:center;flex:none}
+.chips.col .chip.sel i{background:var(--gold);color:#fff}
+.chip small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+
+/* carduri mari 2×2 (pasul 4) */
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ocard{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:104px;padding:14px;border-radius:14px;border:1.5px solid var(--line);background:#fff;cursor:pointer;text-align:left}
+.ocard i{width:38px;height:38px;border-radius:11px;background:var(--bg);color:var(--muted);display:grid;place-items:center;font-size:1rem;margin-bottom:6px}
+.ocard b{font-size:.95rem;line-height:1.2}
+.ocard small{color:var(--muted);font-size:.78rem;line-height:1.3}
+.cards2.compact .ocard{flex-direction:row;align-items:center;gap:10px;min-height:58px;padding:9px 12px}
+.cards2.compact .ocard i{margin:0;width:34px;height:34px;flex:none}
+.ocard.sel{border-color:var(--gold);background:var(--gold-soft)}
+.ocard.sel i{background:var(--gold);color:#fff}
+/* selector segmentat (etaj / lift) */
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:#f2efe9;border-radius:14px;padding:4px;gap:4px}
+.seg button{min-height:46px;border:0;border-radius:11px;background:transparent;font-weight:700;font-size:.92rem;cursor:pointer}
+.seg button.sel{background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.1);outline:1.5px solid var(--gold)}
+
+/* culori */
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.swc{border:1.5px solid var(--line);border-radius:12px;padding:8px 6px;background:#fff;cursor:pointer;font-size:.74rem;font-weight:700;text-align:center}
+.swc span{display:block;height:40px;border-radius:8px;margin-bottom:6px;border:1px solid rgba(0,0,0,.08)}
+.swc.sel{border-color:var(--gold);background:var(--gold-soft)}
+
+/* câmpuri */
+.f{width:100%;font:inherit;font-size:16px;padding:14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.f:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(197,155,39,.15)}
+.f.bad{border-color:var(--err)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini{display:block;font-size:.76rem;font-weight:700;color:var(--muted);margin:0 0 6px 2px}
+.unit{position:relative}
+.unit .f{padding-right:38px}
+.unit em{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--muted);font-size:.8rem}
+.err-msg{color:var(--err);font-size:.85rem;font-weight:600;margin-top:8px}
+.tip{display:flex;gap:10px;background:var(--gold-soft);border-radius:12px;padding:12px 14px;font-size:.85rem;color:#5d470c;margin-top:12px}
+.tip i{margin-top:3px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);cursor:pointer}
+.check input{width:22px;height:22px;accent-color:var(--gold);flex:none;margin-top:1px}
+
+/* rezumat */
+.summary{background:var(--bg);border-radius:14px;margin-top:6px}
+.summary summary{list-style:none;cursor:pointer;padding:15px 16px;font-weight:800;display:flex;justify-content:space-between}
+.summary summary::-webkit-details-marker{display:none}
+.summary dl{padding:0 16px 14px;display:grid;gap:8px;font-size:.88rem}
+.summary dl div{display:grid;grid-template-columns:120px 1fr;gap:10px;border-top:1px solid var(--line);padding-top:8px}
+.summary dt{color:var(--muted)}
+.summary dd{font-weight:600}
+.summary .edit{color:var(--gold-d);font-weight:700;font-size:.8rem;cursor:pointer;background:none;border:0;text-decoration:underline;padding:0}
+
+/* bara de navigare a pașilor: fixă jos pe mobil */
+.wnav{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 12px calc(10px + var(--safe-b))}
+.wnav .in{max-width:720px;margin:0 auto;display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;border-radius:14px;min-height:54px;padding:0 18px;border:0;cursor:pointer;font-size:1rem}
+.btn-back{background:#f2efe9;flex:0 0 auto;width:58px;padding:0}
+.btn-next{background:var(--ink);color:#fff;flex:1}
+.btn-send{background:var(--gold);color:#fff;flex:1}
+.btn-wa{background:var(--wa);color:#fff}
+.btn:disabled{opacity:.65;cursor:wait}
+@media(min-width:900px){.wnav{position:static;background:none;border:0;padding:0 18px 18px}.wnav .in{max-width:none}body{padding-bottom:40px}}
+
+/* ecran final */
+.done{text-align:center;padding:30px 20px}
+.done .big{width:76px;height:76px;border-radius:50%;background:rgba(37,211,102,.14);color:#1faa53;display:grid;place-items:center;font-size:2.2rem;margin:0 auto 16px}
+.done h2{font-size:1.7rem;margin-bottom:8px}
+.done p{color:var(--muted)}
+.next-steps{text-align:left;list-style:none;margin:22px 0;display:grid;gap:12px;counter-reset:n}
+.next-steps li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:.92rem}
+.next-steps li:before{content:counter(n);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-weight:800}
+.done .acts{display:grid;gap:10px}
+.fail{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.35);color:#8e2a1f;border-radius:12px;padding:14px;font-size:.9rem;margin-top:16px}
+.fail a{text-decoration:underline;font-weight:700}
+
+.help{text-align:center;color:var(--muted);font-size:.86rem;padding:22px 16px 6px}
+.help a{color:var(--ink);font-weight:700;text-decoration:underline}
+footer{background:var(--ink);color:#a59e93;text-align:center;padding:24px 18px;font-size:.8rem;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="in">
+  <a href="Index.html" class="logo"><i class="fa-solid fa-couch"></i><div><b>ACI <span>MOBILĂ</span></b><small>ACTUAL CIP INVEST</small></div></a>
+  <nav class="nav"><a href="Index.html#servicii">Servicii</a><a href="Portofoliu.html">Portofoliu</a><a href="Index.html#proces">Cum lucrăm</a><a href="Oferta.html" class="on">Cere ofertă</a><a href="Index.html#contact">Contact</a></nav>
+  <button class="burger" id="burger" aria-label="Meniu"><i class="fa-solid fa-bars"></i></button>
+</div></header>
+<nav class="drawer" id="drawer" hidden>
+  <a href="Index.html">Acasă <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Portofoliu.html">Portofoliu <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#proces">Cum lucrăm <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#faq">Întrebări frecvente <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Index.html#contact">Contact & program <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="tel:0722252414">Sună: 0722 252 414 <i class="fa-solid fa-phone"></i></a>
+</nav>
+
+<section class="page-hero"><div class="wrap">
+  <span class="eyebrow">Cere o ofertă</span>
+  <h1>Spune-ne ce ai nevoie</h1>
+  <p>5 pași scurți, cam 2 minute. Cu cât ne spui mai multe, cu atât oferta e mai exactă.</p>
+  <div class="perks"><span><i class="fa-solid fa-check"></i>Fără obligații</span><span><i class="fa-solid fa-floppy-disk"></i>Se salvează automat</span><span><i class="fa-solid fa-phone"></i>Te sunăm noi</span></div>
+</div></section>
+
+<main class="wrap">
+<div class="card" id="card">
+  <div class="prog" id="prog">
+    <div class="prog-head"><b id="stepTitle">Ce mobilier dorești?</b><small id="stepNo">Pasul 1 din 5</small></div>
+    <div class="bars"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <form id="wf" class="body" novalidate>
+    <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+    <!-- PAS 1: CE -->
+    <div class="step on" data-step="1" data-title="Ce mobilier dorești?">
+      <div class="q">
+        <span class="ql">Pentru ce cameră? <span class="req">*</span></span>
+        <span class="hint">Poți alege mai multe.</span>
+        <div class="tiles" data-g="camere" data-multi>
+          <button type="button" class="tile" data-v="Bucătărie"><img src="Bucatarie R/Buc1.jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Bucătărie</b></button>
+          <button type="button" class="tile" data-v="Dressing"><img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.15.jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Dressing</b></button>
+          <button type="button" class="tile" data-v="Dormitor"><img src="Doctor/Dormitor.jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Dormitor</b></button>
+          <button type="button" class="tile" data-v="Living"><img src="Doctor/Sufragerie.jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Living</b></button>
+          <button type="button" class="tile" data-v="Birou / firmă"><img src="Photodump/WhatsApp Image 2026-11-02 at 21.23.58 (1).jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Birou / firmă</b></button>
+          <button type="button" class="tile" data-v="Hol / altceva"><img src="babi/Hol2.jpeg" alt="" loading="lazy"><span class="ck"><i class="fa-solid fa-check"></i></span><b>Hol / altceva</b></button>
+        </div>
+        <p class="err-msg" data-err="camere" hidden>Alege cel puțin o cameră.</p>
+      </div>
+      <div class="q">
+        <span class="ql">Care e situația?</span>
+        <div class="chips col" data-g="situatie">
+          <button type="button" class="chip" data-v="Locuință nouă"><i class="fa-solid fa-key"></i><span>Locuință nouă<small>Mobilez de la zero</small></span></button>
+          <button type="button" class="chip" data-v="Renovare"><i class="fa-solid fa-paint-roller"></i><span>Renovare<small>Schimb mobilierul vechi</small></span></button>
+          <button type="button" class="chip" data-v="Completez ce am"><i class="fa-solid fa-puzzle-piece"></i><span>Completez ce am<small>Am nevoie de câteva piese</small></span></button>
+          <button type="button" class="chip" data-v="Spațiu comercial / instituție"><i class="fa-solid fa-building"></i><span>Spațiu comercial / instituție<small>Birou, magazin, grădiniță, HoReCa</small></span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAS 2: SPAȚIUL -->
+    <div class="step" data-step="2" data-title="Despre spațiu">
+      <div class="q">
+        <label for="loc">Localitatea <span class="req">*</span></label>
+        <span class="hint">Ca să știm unde venim la măsurători și montaj.</span>
+        <input class="f" id="loc" name="loc" placeholder="ex: Târgoviște" autocomplete="address-level2">
+        <p class="err-msg" data-err="loc" hidden>Scrie localitatea.</p>
+      </div>
+      <div class="q">
+        <span class="ql">Dimensiunile</span>
+        <div class="chips col" data-g="masuratori">
+          <button type="button" class="chip" data-v="Știu dimensiunile aproximative"><i class="fa-solid fa-ruler-combined"></i><span>Știu dimensiunile aproximative</span></button>
+          <button type="button" class="chip" data-v="Vreau măsurători la fața locului"><i class="fa-solid fa-house"></i><span>Vreau să veniți la măsurători</span></button>
+        </div>
+        <div id="dims" hidden style="margin-top:14px">
+          <div class="grid3">
+            <div><span class="mini">Lungime</span><div class="unit"><input class="f" id="dL" inputmode="numeric" placeholder="320"><em>cm</em></div></div>
+            <div><span class="mini">Înălțime</span><div class="unit"><input class="f" id="dH" inputmode="numeric" placeholder="260"><em>cm</em></div></div>
+            <div><span class="mini">Adâncime</span><div class="unit"><input class="f" id="dA" inputmode="numeric" placeholder="60"><em>cm</em></div></div>
+          </div>
+          <div class="tip"><i class="fa-solid fa-lightbulb"></i><span>Ai o schiță sau poze cu camera? După ce trimiți cererea, ți le poți trimite pe WhatsApp dintr-o atingere.</span></div>
+        </div>
+      </div>
+
+      <!-- detalii care apar doar pentru camerele alese -->
+      <div class="sect" data-for="Bucătărie" hidden>
+        <div class="sect-t"><i class="fa-solid fa-kitchen-set"></i> Bucătărie</div>
+        <div class="q"><span class="ql">Ce formă are?</span>
+          <div class="chips" data-g="forma_bucatarie">
+            <button type="button" class="chip" data-v="Liniară">Liniară</button><button type="button" class="chip" data-v="În L">În L</button><button type="button" class="chip" data-v="În U">În U</button><button type="button" class="chip" data-v="Cu insulă">Cu insulă</button><button type="button" class="chip" data-v="Nu știu">Nu știu</button>
+          </div></div>
+        <div class="q"><span class="ql">Electrocasnice încorporate</span><span class="hint">Ce trebuie să intre în mobilier? Poți alege mai multe.</span>
+          <div class="chips" data-g="electrocasnice" data-multi>
+            <button type="button" class="chip" data-v="Cuptor">Cuptor</button><button type="button" class="chip" data-v="Plită">Plită</button><button type="button" class="chip" data-v="Hotă">Hotă</button><button type="button" class="chip" data-v="Frigider">Frigider</button><button type="button" class="chip" data-v="Mașină de spălat vase">Mașină de vase</button><button type="button" class="chip" data-v="Microunde">Microunde</button><button type="button" class="chip" data-v="Centrală / boiler">Centrală / boiler</button>
+          </div></div>
+        <div class="q"><span class="ql">Blatul</span>
+          <div class="chips" data-g="blat">
+            <button type="button" class="chip" data-v="Decor lemn">Decor lemn</button><button type="button" class="chip" data-v="Piatră / beton">Piatră / beton</button><button type="button" class="chip" data-v="Alb">Alb</button><button type="button" class="chip" data-v="Închis la culoare">Închis</button><button type="button" class="chip" data-v="Nu știu">Nu știu</button>
+          </div></div>
+      </div>
+
+      <div class="sect" data-for="Dressing|Dormitor|Hol / altceva" hidden>
+        <div class="sect-t"><i class="fa-solid fa-door-closed"></i> Dulapuri & dressing</div>
+        <div class="q"><span class="ql">Ce uși preferi?</span>
+          <div class="chips" data-g="usi">
+            <button type="button" class="chip" data-v="Glisante">Glisante</button><button type="button" class="chip" data-v="Batante">Batante</button><button type="button" class="chip" data-v="Fără uși (deschis)">Fără uși</button><button type="button" class="chip" data-v="Nu știu">Nu știu</button>
+          </div></div>
+        <div class="q"><span class="ql">Ce să conțină?</span><span class="hint">Poți alege mai multe.</span>
+          <div class="chips" data-g="dotari" data-multi>
+            <button type="button" class="chip" data-v="Bară de haine">Bară de haine</button><button type="button" class="chip" data-v="Sertare">Sertare</button><button type="button" class="chip" data-v="Rafturi">Rafturi</button><button type="button" class="chip" data-v="Pantofar">Pantofar</button><button type="button" class="chip" data-v="Oglindă">Oglindă</button><button type="button" class="chip" data-v="Iluminare LED">LED</button><button type="button" class="chip" data-v="Nișă TV">Nișă TV</button>
+          </div></div>
+      </div>
+
+      <div class="sect" data-for="Living" hidden>
+        <div class="sect-t"><i class="fa-solid fa-couch"></i> Living</div>
+        <div class="q"><span class="ql">Ce piese?</span><span class="hint">Poți alege mai multe.</span>
+          <div class="chips" data-g="piese_living" data-multi>
+            <button type="button" class="chip" data-v="Comodă TV">Comodă TV</button><button type="button" class="chip" data-v="Bibliotecă">Bibliotecă</button><button type="button" class="chip" data-v="Bufet / vitrină">Bufet</button><button type="button" class="chip" data-v="Rafturi suspendate">Rafturi</button><button type="button" class="chip" data-v="Masă">Masă</button>
+          </div></div>
+      </div>
+
+      <div class="sect" data-for="Birou / firmă" hidden>
+        <div class="sect-t"><i class="fa-solid fa-briefcase"></i> Birou / firmă</div>
+        <div class="q"><span class="ql">Ce tip de spațiu?</span>
+          <div class="chips" data-g="tip_spatiu">
+            <button type="button" class="chip" data-v="Birou">Birou</button><button type="button" class="chip" data-v="Arhivă / depozitare">Arhivă</button><button type="button" class="chip" data-v="Grădiniță / școală">Grădiniță / școală</button><button type="button" class="chip" data-v="Magazin / HoReCa">Magazin / HoReCa</button>
+          </div></div>
+        <div class="q"><label for="posturi">Câte birouri / piese aproximativ?</label><input class="f" id="posturi" inputmode="numeric" placeholder="ex: 6"></div>
+      </div>
+    </div>
+
+    <!-- PAS 3: STIL -->
+    <div class="step" data-step="3" data-title="Stil și finisaje">
+      <div class="q"><span class="ql">Ce stil îți place?</span>
+        <div class="chips" data-g="stil">
+          <button type="button" class="chip" data-v="Modern">Modern</button><button type="button" class="chip" data-v="Minimalist">Minimalist</button><button type="button" class="chip" data-v="Clasic">Clasic</button><button type="button" class="chip" data-v="Industrial">Industrial</button><button type="button" class="chip" data-v="Nu știu încă">Nu știu încă</button>
+        </div></div>
+      <div class="q"><span class="ql">Culori preferate</span><span class="hint">Poți alege mai multe.</span>
+        <div class="swatches" data-g="culori" data-multi>
+          <button type="button" class="swc" data-v="Alb"><span style="background:#f5f5f2"></span>Alb</button>
+          <button type="button" class="swc" data-v="Capucino / crem"><span style="background:#d8cbbb"></span>Capucino</button>
+          <button type="button" class="swc" data-v="Stejar"><span style="background:linear-gradient(90deg,#c9a777,#b8915e,#cfae80)"></span>Stejar</button>
+          <button type="button" class="swc" data-v="Nuc"><span style="background:linear-gradient(90deg,#6e4a33,#5a3b28,#7a523a)"></span>Nuc</button>
+          <button type="button" class="swc" data-v="Gri"><span style="background:#a3a5a6"></span>Gri</button>
+          <button type="button" class="swc" data-v="Antracit"><span style="background:#45474b"></span>Antracit</button>
+          <button type="button" class="swc" data-v="Negru"><span style="background:#1d1d1d"></span>Negru</button>
+          <button type="button" class="swc" data-v="Altă culoare / nu știu"><span style="background:conic-gradient(#e6b8a2,#c9d7b5,#a9c4d9,#d4b5d8,#e6b8a2)"></span>Altceva</button>
+        </div></div>
+      <div class="q"><span class="ql">Fronturile (ușile)</span>
+        <div class="chips" data-g="fronturi">
+          <button type="button" class="chip" data-v="Mate">Mate</button><button type="button" class="chip" data-v="Lucioase">Lucioase</button><button type="button" class="chip" data-v="Decor lemn">Decor lemn</button><button type="button" class="chip" data-v="MDF vopsit">MDF vopsit</button><button type="button" class="chip" data-v="Nu știu">Nu știu</button>
+        </div></div>
+      <div class="q"><span class="ql">Mânere</span>
+        <div class="chips" data-g="manere">
+          <button type="button" class="chip" data-v="Mâner aplicat">Mâner aplicat</button><button type="button" class="chip" data-v="Profil integrat (fără mâner)">Fără mâner (profil)</button><button type="button" class="chip" data-v="Push-to-open">Push-to-open</button><button type="button" class="chip" data-v="Nu știu">Nu știu</button>
+        </div></div>
+      <div class="q"><label for="inspir">Ți-a plăcut ceva din portofoliu?</label><span class="hint">Opțional. Scrie numele lucrării sau ce îți place.</span>
+        <input class="f" id="inspir" placeholder="ex: Dressing nuc cu LED"></div>
+    </div>
+
+    <!-- PAS 4: TERMEN ȘI MONTAJ -->
+    <div class="step" data-step="4" data-title="Termen și montaj">
+      <div class="q"><span class="ql">Când ai nevoie de mobilier?</span>
+        <div class="cards2" data-g="termen">
+          <button type="button" class="ocard" data-v="Cât mai repede"><i class="fa-solid fa-bolt"></i><b>Cât mai repede</b><small>E urgent</small></button>
+          <button type="button" class="ocard" data-v="În 1–2 luni"><i class="fa-solid fa-calendar-week"></i><b>În 1–2 luni</b><small>Planific din timp</small></button>
+          <button type="button" class="ocard" data-v="În 3–6 luni"><i class="fa-solid fa-calendar-days"></i><b>În 3–6 luni</b><small>Nu mă grăbesc</small></button>
+          <button type="button" class="ocard" data-v="Doar mă informez"><i class="fa-solid fa-magnifying-glass"></i><b>Mă informez</b><small>Vreau o idee de preț</small></button>
+        </div></div>
+
+      <div class="q"><span class="ql">Unde se montează?</span>
+        <div class="cards2 compact" data-g="tip_locuinta">
+          <button type="button" class="ocard" data-v="Apartament"><i class="fa-solid fa-building"></i><b>Apartament</b></button>
+          <button type="button" class="ocard" data-v="Casă"><i class="fa-solid fa-house"></i><b>Casă</b></button>
+          <button type="button" class="ocard" data-v="Birou"><i class="fa-solid fa-briefcase"></i><b>Birou</b></button>
+          <button type="button" class="ocard" data-v="Spațiu comercial"><i class="fa-solid fa-store"></i><b>Spațiu comercial</b></button>
+        </div></div>
+
+      <div class="q"><span class="ql">În ce stadiu e spațiul?</span>
+        <div class="chips col" data-g="stadiu">
+          <button type="button" class="chip" data-v="Gata pentru montaj"><i class="fa-solid fa-circle-check"></i><span>Gata pentru montaj<small>Pereți și pardoseală finalizate</small></span></button>
+          <button type="button" class="chip" data-v="În renovare"><i class="fa-solid fa-paint-roller"></i><span>În renovare<small>Lucrările sunt în curs</small></span></button>
+          <button type="button" class="chip" data-v="În construcție"><i class="fa-solid fa-helmet-safety"></i><span>În construcție<small>Locuința nu e încă terminată</small></span></button>
+        </div></div>
+
+      <div class="q"><span class="ql">Acces pentru livrare</span><span class="hint">Ne ajută să planificăm transportul și montajul.</span>
+        <span class="mini">Etaj</span>
+        <div class="seg" data-g="etaj">
+          <button type="button" data-v="Parter">Parter</button><button type="button" data-v="Etaj 1–2">1–2</button><button type="button" data-v="Etaj 3–4">3–4</button><button type="button" data-v="Etaj 5+">5+</button>
+        </div>
+        <span class="mini" style="margin-top:12px">Există lift?</span>
+        <div class="seg" data-g="lift">
+          <button type="button" data-v="Da">Da</button><button type="button" data-v="Nu">Nu</button><button type="button" data-v="Nu e cazul">Nu e cazul</button>
+        </div></div>
+
+      <div class="q"><span class="ql">Ce să includă oferta?</span><span class="hint">Poți alege mai multe.</span>
+        <div class="chips" data-g="servicii" data-multi>
+          <button type="button" class="chip" data-v="Măsurători"><i class="fa-solid fa-ruler"></i> Măsurători</button>
+          <button type="button" class="chip" data-v="Transport"><i class="fa-solid fa-truck"></i> Transport</button>
+          <button type="button" class="chip" data-v="Montaj"><i class="fa-solid fa-screwdriver-wrench"></i> Montaj</button>
+          <button type="button" class="chip" data-v="Demontarea mobilierului vechi"><i class="fa-solid fa-trash-can"></i> Demontare mobilier vechi</button>
+        </div></div>
+    </div>
+
+    <!-- PAS 5: CONTACT -->
+    <div class="step" data-step="5" data-title="Datele tale de contact">
+      <div class="q"><label for="nm">Nume <span class="req">*</span></label><input class="f" id="nm" autocomplete="name" placeholder="Prenume și nume"><p class="err-msg" data-err="nm" hidden>Scrie-ne numele tău.</p></div>
+      <div class="q"><label for="ph">Telefon <span class="req">*</span></label><input class="f" id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="07xx xxx xxx"><p class="err-msg" data-err="ph" hidden>Scrie un număr de telefon valid.</p></div>
+      <div class="q"><label for="em">E-mail</label><span class="hint">Opțional. Îți putem trimite oferta și pe e-mail.</span><input class="f" id="em" type="email" inputmode="email" autocomplete="email" placeholder="nume@exemplu.ro"><p class="err-msg" data-err="em" hidden>Adresa de e-mail nu pare corectă.</p></div>
+      <div class="q"><span class="ql">Cum preferi să te contactăm?</span>
+        <div class="chips" data-g="contact_preferat">
+          <button type="button" class="chip" data-v="Telefon"><i class="fa-solid fa-phone"></i> Telefon</button><button type="button" class="chip" data-v="WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button type="button" class="chip" data-v="E-mail"><i class="fa-solid fa-envelope"></i> E-mail</button>
+        </div></div>
+      <div class="q"><span class="ql">Când te putem suna?</span>
+        <div class="chips" data-g="interval">
+          <button type="button" class="chip" data-v="Oricând (08–16)">Oricând</button><button type="button" class="chip" data-v="Dimineața (08–12)">Dimineața</button><button type="button" class="chip" data-v="După-amiaza (12–16)">După-amiaza</button>
+        </div></div>
+      <div class="q"><label for="msg">Altceva ce ar trebui să știm?</label><textarea class="f" id="msg" rows="3" placeholder="Orice detaliu: obstacole (țevi, calorifere), preferințe, întrebări…"></textarea></div>
+      <div class="q"><span class="ql">De unde ai aflat de noi?</span>
+        <div class="chips" data-g="sursa">
+          <button type="button" class="chip" data-v="Google">Google</button><button type="button" class="chip" data-v="Facebook / Instagram / TikTok">Social media</button><button type="button" class="chip" data-v="Recomandare">Recomandare</button><button type="button" class="chip" data-v="Am văzut atelierul">Am văzut atelierul</button><button type="button" class="chip" data-v="Altfel">Altfel</button>
+        </div></div>
+
+      <details class="summary" id="sumBox"><summary>Verifică ce ai completat <i class="fa-solid fa-chevron-down"></i></summary><dl id="sum"></dl></details>
+
+      <div class="q" style="margin-top:18px">
+        <label class="check"><input type="checkbox" id="gdpr"><span>Sunt de acord ca ACI (Actual Cip Invest SRL) să folosească aceste date doar pentru a mă contacta în legătură cu oferta. <span class="req">*</span></span></label>
+        <p class="err-msg" data-err="gdpr" hidden>Bifează acordul ca să putem trimite cererea.</p>
+      </div>
+      <div class="fail" id="fail" hidden></div>
+    </div>
+  </form>
+
+  <!-- ECRAN FINAL -->
+  <div class="done" id="done" hidden>
+    <div class="big"><i class="fa-solid fa-check"></i></div>
+    <h2>Mulțumim, <span id="doneName"></span>!</h2>
+    <p>Cererea ta a ajuns la noi. Iată ce urmează:</p>
+    <ol class="next-steps">
+      <li><span>Te contactăm în programul de lucru (luni–vineri, 08:00–16:00).</span></li>
+      <li><span>Stabilim împreună detaliile și, dacă e nevoie, măsurătorile.</span></li>
+      <li><span>Primești oferta, cu materialele și termenul de execuție.</span></li>
+    </ol>
+    <div class="acts">
+      <a class="btn btn-wa" id="sendPhotos" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> Trimite poze cu camera</a>
+      <a class="btn btn-next" href="Portofoliu.html">Vezi lucrările noastre</a>
+      <a class="btn btn-back" style="width:auto" href="Index.html">Înapoi la pagina principală</a>
+    </div>
+  </div>
+</div>
+
+<p class="help">Ai întrebări? Sună-ne la <a href="tel:0722252414">0722 252 414</a> sau scrie-ne pe <a href="https://wa.me/40722252414">WhatsApp</a>.</p>
+</main>
+
+<div class="wnav" id="wnav"><div class="in">
+  <button type="button" class="btn btn-back" id="back" aria-label="Înapoi" hidden><i class="fa-solid fa-arrow-left"></i></button>
+  <button type="button" class="btn btn-next" id="next">Continuă <i class="fa-solid fa-arrow-right"></i></button>
+  <button type="button" class="btn btn-send" id="send" hidden><i class="fa-solid fa-paper-plane"></i> Trimite cererea</button>
+</div></div>
+
+<footer>© 2026 Actual Cip Invest SRL · Str. Luca nr. 18 C, Răzvad, Dâmbovița</footer>
+
+<script>
+// ===== Configurare trimitere (FormSubmit) =====
+const OFFER_FORM_ID = '4c90e6ae0960b46ea0cd3459595d20ca';
+const OFFER_ENDPOINT = 'https://formsubmit.co/ajax/' + OFFER_FORM_ID;
+const PHONE_WA = '40722252414';
+const DRAFT_KEY = 'aci_oferta_draft_v1';
+const TOTAL = 5;
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const sel = {};                      // grupuri de alegeri: { camere:[..], forma_bucatarie:'..', ... }
+const TEXT_IDS = ['loc', 'dL', 'dH', 'dA', 'posturi', 'inspir', 'nm', 'ph', 'em', 'msg'];
+let step = 1;
+
+// ----- meniu -----
+$('#burger').onclick = () => { $('#drawer').hidden = !$('#drawer').hidden; };
+
+// ----- alegeri (tile / chip / culoare) -----
+$$('[data-g]').forEach(group => {
+  const name = group.dataset.g, multi = group.hasAttribute('data-multi');
+  sel[name] = multi ? [] : '';
+  group.addEventListener('click', e => {
+    const b = e.target.closest('[data-v]'); if (!b) return;
+    const v = b.dataset.v;
+    if (multi) {
+      const i = sel[name].indexOf(v);
+      i >= 0 ? sel[name].splice(i, 1) : sel[name].push(v);
+    } else {
+      sel[name] = sel[name] === v ? '' : v;         // a doua atingere deselectează
+    }
+    paint(name);
+    if (name === 'camere') { updateSections(); hideErr('camere'); }
+    if (name === 'masuratori') updateDims();
+    saveDraft();
+  });
+});
+function paint(name) {
+  const group = document.querySelector('[data-g="' + name + '"]');
+  const multi = group.hasAttribute('data-multi');
+  group.querySelectorAll('[data-v]').forEach(b => {
+    const on = multi ? sel[name].includes(b.dataset.v) : sel[name] === b.dataset.v;
+    b.classList.toggle('sel', on);
+    b.setAttribute('aria-pressed', on);
+  });
+}
+function updateSections() {
+  $$('.sect[data-for]').forEach(s => {
+    const rooms = s.dataset.for.split('|');
+    s.hidden = !rooms.some(r => sel.camere.includes(r));
+  });
+}
+function updateDims() { $('#dims').hidden = sel.masuratori !== 'Știu dimensiunile aproximative'; }
+
+// ----- pași -----
+function show(n) {
+  step = n;
+  $$('.step').forEach(s => s.classList.toggle('on', +s.dataset.step === n));
+  $$('.bars span').forEach((b, i) => b.classList.toggle('on', i < n));
+  const cur = document.querySelector('.step[data-step="' + n + '"]');
+  $('#stepTitle').textContent = cur.dataset.title;
+  $('#stepNo').textContent = 'Pasul ' + n + ' din ' + TOTAL;
+  $('#back').hidden = n === 1;
+  $('#next').hidden = n === TOTAL;
+  $('#send').hidden = n !== TOTAL;
+  if (n === TOTAL) buildSummary();
+  toCard();
+  saveDraft();
+}
+function toCard() { window.scrollTo({ top: $('#card').getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' }); }
+function showErr(k) { const e = document.querySelector('[data-err="' + k + '"]'); if (e) e.hidden = false; const f = document.getElementById(k); if (f && f.classList) f.classList.add('bad'); }
+function hideErr(k) { const e = document.querySelector('[data-err="' + k + '"]'); if (e) e.hidden = true; const f = document.getElementById(k); if (f && f.classList) f.classList.remove('bad'); }
+TEXT_IDS.concat(['gdpr']).forEach(id => { const el = document.getElementById(id); el.addEventListener('input', () => { hideErr(id); saveDraft(); }); el.addEventListener('change', () => { hideErr(id); saveDraft(); }); });
+
+const v = id => document.getElementById(id).value.trim();
+function validate(n) {
+  let ok = true, first = null;
+  const fail = (k, el) => { ok = false; showErr(k); if (!first) first = el || document.getElementById(k); };
+  if (n === 1 && !sel.camere.length) fail('camere', document.querySelector('[data-g="camere"]'));
+  if (n === 2 && !v('loc')) fail('loc');
+  if (n === 5) {
+    if (!v('nm')) fail('nm');
+    if (v('ph').replace(/\D/g, '').length < 9) fail('ph');
+    if (v('em') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('em'))) fail('em');
+    if (!$('#gdpr').checked) fail('gdpr', $('#gdpr'));
+  }
+  if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); if (first.focus && first.tagName === 'INPUT' && first.type !== 'checkbox') setTimeout(() => first.focus({ preventScroll: true }), 300); }
+  return ok;
+}
+$('#next').onclick = () => { if (validate(step)) show(Math.min(TOTAL, step + 1)); };
+$('#back').onclick = () => show(Math.max(1, step - 1));
+
+// ----- date pentru e-mail (în ordinea în care le citești) -----
+const list = a => (a && a.length) ? a.join(', ') : '-';
+const one = s => s || '-';
+function collect() {
+  const has = r => sel.camere.includes(r);
+  const dims = sel.masuratori === 'Știu dimensiunile aproximative'
+    ? [v('dL') && 'L ' + v('dL') + ' cm', v('dH') && 'Î ' + v('dH') + ' cm', v('dA') && 'A ' + v('dA') + ' cm'].filter(Boolean).join(' · ') || 'nespecificate'
+    : (sel.masuratori || '-');
+  const d = {
+    'Nume': v('nm'),
+    'Telefon': v('ph'),
+    'E-mail client': one(v('em')),
+    'Contact preferat': one(sel.contact_preferat),
+    'Interval apel': one(sel.interval),
+    'Camere / mobilier': list(sel.camere),
+    'Situație': one(sel.situatie),
+    'Localitate': v('loc'),
+    'Măsurători / dimensiuni': dims
+  };
+  if (has('Bucătărie')) Object.assign(d, { 'Bucătărie – formă': one(sel.forma_bucatarie), 'Bucătărie – electrocasnice': list(sel.electrocasnice), 'Bucătărie – blat': one(sel.blat) });
+  if (has('Dressing') || has('Dormitor') || has('Hol / altceva')) Object.assign(d, { 'Dulapuri – uși': one(sel.usi), 'Dulapuri – dotări': list(sel.dotari) });
+  if (has('Living')) d['Living – piese'] = list(sel.piese_living);
+  if (has('Birou / firmă')) Object.assign(d, { 'Firmă – tip spațiu': one(sel.tip_spatiu), 'Firmă – nr. piese': one(v('posturi')) });
+  Object.assign(d, {
+    'Stil': one(sel.stil),
+    'Culori': list(sel.culori),
+    'Fronturi': one(sel.fronturi),
+    'Mânere': one(sel.manere),
+    'Inspirație din portofoliu': one(v('inspir')),
+    'Termen': one(sel.termen),
+    'Tip spațiu montaj': one(sel.tip_locuinta),
+    'Stadiul spațiului': one(sel.stadiu),
+    'Acces': [sel.etaj, sel.lift && 'lift: ' + sel.lift].filter(Boolean).join(', ') || '-',
+    'Oferta să includă': list(sel.servicii),
+    'Alte detalii': one(v('msg')),
+    'De unde a aflat': one(sel.sursa),
+    'Trimis la': new Date().toLocaleString('ro-RO')
+  });
+  return d;
+}
+function buildSummary() {
+  const d = collect();
+  const skip = ['Nume', 'Telefon', 'E-mail client', 'Contact preferat', 'Interval apel', 'Trimis la', 'Alte detalii', 'De unde a aflat'];
+  const back = { 'Camere / mobilier': 1, 'Situație': 1, 'Localitate': 2, 'Măsurători / dimensiuni': 2, 'Stil': 3, 'Culori': 3, 'Fronturi': 3, 'Mânere': 3, 'Inspirație din portofoliu': 3, 'Termen': 4, 'Tip spațiu montaj': 4, 'Stadiul spațiului': 4, 'Acces': 4, 'Oferta să includă': 4 };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  $('#sum').innerHTML = Object.entries(d).filter(([k]) => !skip.includes(k)).map(([k, val]) =>
+    `<div><dt>${esc(k)}</dt><dd>${esc(val)} <button type="button" class="edit" data-go="${back[k] || 2}">modifică</button></dd></div>`).join('');
+}
+$('#sum').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) show(+b.dataset.go); });
+
+// ----- trimitere -----
+$('#send').onclick = async () => {
+  if (v('hp')) return;                            // robot
+  if (!validate(5)) return;
+  const d = collect();
+  const payload = Object.assign({
+    _subject: `Cerere ofertă: ${list(sel.camere)} – ${d['Nume']} (${d['Localitate']})`,
+    _template: 'table',
+    _captcha: 'false'
+  }, d);
+  if (d['E-mail client'] !== '-') payload._replyto = d['E-mail client'];
+
+  const btn = $('#send');
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Se trimite…';
+  $('#fail').hidden = true;
+  try {
+    const r = await fetch(OFFER_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || String(j.success) !== 'true') { console.warn('FormSubmit a răspuns:', r.status, j); throw new Error(j.message || 'HTTP ' + r.status); }
+    finish(d);
+  } catch (err) {
+    console.warn('Cererea nu a fost trimisă:', err.message);
+    const wa = 'https://wa.me/' + PHONE_WA + '?text=' + encodeURIComponent(waText(d));
+    $('#fail').innerHTML = /activat/i.test(err.message)
+      ? 'Formularul așteaptă activarea din e-mailul FormSubmit. Până atunci, <a href="' + wa + '">trimite cererea pe WhatsApp</a> (se completează singură).'
+      : 'Cererea nu a putut fi trimisă acum. <a href="' + wa + '">Trimite-o pe WhatsApp</a> (se completează singură) sau sună-ne la <a href="tel:0722252414">0722 252 414</a>.';
+    $('#fail').hidden = false;
+    $('#fail').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } finally {
+    btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Trimite cererea';
+  }
+};
+function waText(d) {
+  return 'Bună ziua! Doresc o ofertă.\n' + Object.entries(d).filter(([, x]) => x && x !== '-').map(([k, x]) => '• ' + k + ': ' + x).join('\n');
+}
+function finish(d) {
+  $('#wf').hidden = true; $('#prog').hidden = true; $('#wnav').hidden = true;
+  $('#doneName').textContent = d['Nume'].split(' ')[0];
+  $('#sendPhotos').href = 'https://wa.me/' + PHONE_WA + '?text=' + encodeURIComponent('Bună ziua! Sunt ' + d['Nume'] + ', tocmai am trimis o cerere de ofertă pentru ' + list(sel.camere) + '. Vă trimit câteva poze cu spațiul:');
+  $('#done').hidden = false;
+  document.body.style.paddingBottom = '0';
+  toCard();
+  try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+}
+
+// ----- ciornă salvată automat (dacă închizi pagina, nu pierzi ce ai completat) -----
+function saveDraft() {
+  try {
+    const t = {}; TEXT_IDS.forEach(id => t[id] = document.getElementById(id).value);
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({ sel, t, step, gdpr: $('#gdpr').checked }));
+  } catch (e) {}
+}
+function loadDraft() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY); if (!raw) return false;
+    const dr = JSON.parse(raw);
+    Object.keys(sel).forEach(k => { if (dr.sel && k in dr.sel) sel[k] = dr.sel[k]; paint(k); });
+    TEXT_IDS.forEach(id => { if (dr.t && dr.t[id] != null) document.getElementById(id).value = dr.t[id]; });
+    $('#gdpr').checked = !!dr.gdpr;
+    return dr.step || 1;
+  } catch (e) { return false; }
+}
+
+// ----- pornire: ciornă sau ?tip=bucatarii din portofoliu -----
+const TIP = { bucatarii: 'Bucătărie', dressing: 'Dressing', dormitor: 'Dormitor', living: 'Living', dulapuri: 'Birou / firmă', birou: 'Birou / firmă' };
+const savedStep = loadDraft();
+const tip = TIP[new URLSearchParams(location.search).get('tip')];
+if (tip && !sel.camere.includes(tip)) { sel.camere.push(tip); paint('camere'); }
+updateSections(); updateDims();
+step = savedStep || 1;
+$$('.step').forEach(s => s.classList.toggle('on', +s.dataset.step === step));
+$$('.bars span').forEach((b, i) => b.classList.toggle('on', i < step));
+$('#stepTitle').textContent = document.querySelector('.step[data-step="' + step + '"]').dataset.title;
+$('#stepNo').textContent = 'Pasul ' + step + ' din ' + TOTAL;
+$('#back').hidden = step === 1; $('#next').hidden = step === TOTAL; $('#send').hidden = step !== TOTAL;
+if (step === TOTAL) buildSummary();
+</script>
+</body>
+</html>

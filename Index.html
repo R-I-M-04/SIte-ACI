@@ -129,7 +129,9 @@ label{font-size:.8rem;font-weight:700;color:#cfc8bc;display:block;margin-bottom:
 .send{display:grid;gap:10px;grid-template-columns:1fr}
 @media(min-width:600px){.send{grid-template-columns:1fr 1fr}}
 .note{font-size:.8rem;color:#a9a196}
-.btn:disabled{opacity:.7;cursor:wait}
+.qlist{list-style:none;display:grid;gap:10px;margin:20px 0 24px;color:#e5ddcf;font-size:.95rem}
+.qlist i{color:var(--gold);width:22px}
+.quote .send{max-width:620px}
 .qstatus{border-radius:12px;padding:14px 16px;font-size:.92rem;line-height:1.5}
 .qstatus.ok{background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.5);color:#d9f7e4}
 .qstatus.ok i{color:#25d366}
@@ -174,7 +176,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <div class="wrap">
     <a href="#" class="logo"><i class="fa-solid fa-couch"></i><div><b>ACI <span>MOBILĂ</span></b><small>ACTUAL CIP INVEST</small></div></a>
     <nav class="nav"><a href="#servicii">Servicii</a><a href="Portofoliu.html">Portofoliu</a><a href="#proces">Cum lucrăm</a><a href="#faq">Întrebări</a><a href="#contact">Contact</a></nav>
-    <a class="btn btn-gold top-call" href="#oferta" style="min-height:44px;padding:10px 18px;font-size:.9rem">Cere ofertă</a>
+    <a class="btn btn-gold top-call" href="Oferta.html" style="min-height:44px;padding:10px 18px;font-size:.9rem">Cere ofertă</a>
     <button class="burger" id="burger" aria-label="Meniu"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
@@ -183,7 +185,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <a href="#proj">Lucrări recente <i class="fa-solid fa-chevron-right"></i></a>
   <a href="Portofoliu.html">Portofoliu complet <i class="fa-solid fa-chevron-right"></i></a>
   <a href="#proces">Cum lucrăm <i class="fa-solid fa-chevron-right"></i></a>
-  <a href="#oferta">Cere ofertă <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Oferta.html">Cere ofertă <i class="fa-solid fa-chevron-right"></i></a>
   <a href="#faq">Întrebări frecvente <i class="fa-solid fa-chevron-right"></i></a>
   <a href="#contact">Contact & program <i class="fa-solid fa-chevron-right"></i></a>
 </nav>
@@ -196,7 +198,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
     <h1>Mobilă la comandă, <em>făcută pe măsura casei tale</em></h1>
     <p>Bucătării, dressinguri, dormitoare, living și mobilier de birou. Proiectăm, producem și montăm.</p>
     <div class="ctas">
-      <a href="#oferta" class="btn btn-gold"><i class="fa-solid fa-file-pen"></i> Cere o ofertă</a>
+      <a href="Oferta.html" class="btn btn-gold"><i class="fa-solid fa-file-pen"></i> Cere o ofertă</a>
       <a href="https://wa.me/40722252414" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       <a href="tel:0722252414" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> Sună</a>
     </div>
@@ -263,48 +265,20 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   </div>
 </div></section>
 
-<!-- CERERE OFERTĂ -->
+<!-- CERERE OFERTĂ: trimite spre pagina separată Oferta.html -->
 <section id="oferta" class="quote"><div class="wrap">
   <span class="eyebrow">Cere o ofertă</span>
   <h2 class="h2">Spune-ne ce ai nevoie</h2>
-  <p class="lead">Durează un minut. Cererea ajunge automat la noi pe e-mail, cu toate detaliile, iar noi te contactăm.</p>
-  <form id="qf" novalidate>
-    <!-- capcană anti-spam: oamenii nu o văd, roboții o completează -->
-    <input type="text" name="_honey" id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-    <div><label>Ce mobilier dorești?</label>
-      <div class="chips" id="room">
-        <input type="radio" name="room" id="r1" value="Bucătărie" checked><label for="r1">Bucătărie</label>
-        <input type="radio" name="room" id="r2" value="Dressing"><label for="r2">Dressing</label>
-        <input type="radio" name="room" id="r3" value="Dormitor"><label for="r3">Dormitor</label>
-        <input type="radio" name="room" id="r4" value="Living"><label for="r4">Living</label>
-        <input type="radio" name="room" id="r5" value="Birou / firmă"><label for="r5">Birou / firmă</label>
-        <input type="radio" name="room" id="r6" value="Altceva"><label for="r6">Altceva</label>
-      </div>
-    </div>
-    <div class="two">
-      <div><label for="dim">Dimensiuni aprox.</label><input class="f-in" id="dim" placeholder="ex: 3,2 m"></div>
-      <div><label for="loc">Localitate</label><input class="f-in" id="loc" placeholder="ex: Târgoviște"></div>
-    </div>
-    <div><label>Când ai nevoie?</label>
-      <div class="chips">
-        <input type="radio" name="when" id="w1" value="Cât mai repede"><label for="w1">Cât mai repede</label>
-        <input type="radio" name="when" id="w2" value="1-2 luni" checked><label for="w2">1–2 luni</label>
-        <input type="radio" name="when" id="w3" value="Doar mă informez"><label for="w3">Doar mă informez</label>
-      </div>
-    </div>
-    <div><label for="nm">Nume *</label><input class="f-in" id="nm" autocomplete="name" required></div>
-    <div class="two">
-      <div><label for="ph">Telefon *</label><input class="f-in" id="ph" type="tel" autocomplete="tel" inputmode="tel" required></div>
-      <div><label for="em">E-mail (opțional)</label><input class="f-in" id="em" type="email" autocomplete="email" inputmode="email"></div>
-    </div>
-    <div><label for="msg">Detalii (opțional)</label><textarea class="f-in" id="msg" rows="3" placeholder="Culori, stil, ce îți place din portofoliu…"></textarea></div>
-    <div class="send">
-      <button class="btn btn-gold" type="submit" id="qsend"><i class="fa-solid fa-paper-plane"></i> Trimite cererea</button>
-      <button class="btn btn-wa" type="button" id="qwa"><i class="fa-brands fa-whatsapp"></i> Sau pe WhatsApp</button>
-    </div>
-    <div class="qstatus" id="qstatus" role="status" aria-live="polite" hidden></div>
-    <p class="note">Te contactăm în programul de lucru: luni–vineri, 08:00–16:00. Vrei să ne trimiți și poze cu camera? Folosește WhatsApp.</p>
-  </form>
+  <p class="lead">Completezi în 2 minute, de pe telefon: camera, dimensiunile, stilul și termenul. Noi revenim cu oferta.</p>
+  <ul class="qlist">
+    <li><i class="fa-solid fa-hand-pointer"></i> Alegi din variante, scrii foarte puțin</li>
+    <li><i class="fa-solid fa-floppy-disk"></i> Se salvează automat dacă închizi pagina</li>
+    <li><i class="fa-solid fa-phone"></i> Te contactăm noi, L–V 08:00–16:00</li>
+  </ul>
+  <div class="send">
+    <a class="btn btn-gold" href="Oferta.html"><i class="fa-solid fa-file-pen"></i> Începe cererea de ofertă</a>
+    <a class="btn btn-wa" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> Sau scrie-ne pe WhatsApp</a>
+  </div>
 </div></section>
 
 <!-- RECENZII: reale, pe Google -->
@@ -353,7 +327,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
 <nav class="bar">
   <a class="c" href="tel:0722252414"><i class="fa-solid fa-phone"></i> Sună</a>
   <a class="w" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> Chat</a>
-  <a class="o" href="#oferta"><i class="fa-solid fa-file-pen"></i> Ofertă</a>
+  <a class="o" href="Oferta.html"><i class="fa-solid fa-file-pen"></i> Ofertă</a>
 </nav>
 
 <script>
@@ -370,100 +344,6 @@ document.getElementById('projRow').innerHTML=PROJ.map(p=>`<article class="proj">
 const b=document.getElementById('burger'),d=document.getElementById('drawer');
 b.onclick=()=>{d.hidden=!d.hidden};d.querySelectorAll('a').forEach(a=>a.onclick=()=>d.hidden=true);
 
-// ---- Cerere de ofertă: e-mail automat prin FormSubmit (fără server propriu) ----
-// Primul mesaj trimis de pe site declanșează un e-mail de ACTIVARE pe adresa de mai jos; după confirmare, cererile vin automat.
-const OFFER_EMAIL = 'actualcipinvest@gmail.com';                 // doar pentru afișare în mesaje
-const OFFER_FORM_ID = '4c90e6ae0960b46ea0cd3459595d20ca';        // codul primit de la FormSubmit (ascunde adresa de e-mail)
-const OFFER_ENDPOINT = 'https://formsubmit.co/ajax/' + OFFER_FORM_ID;
-
-const qf = document.getElementById('qf'), qsend = document.getElementById('qsend'), qstatus = document.getElementById('qstatus');
-const val = s => ((document.querySelector(s) || {}).value || '').trim();
-
-function offerData() {
-  return {
-    mobilier: val('input[name=room]:checked'),
-    dimensiuni: val('#dim') || '-',
-    localitate: val('#loc') || '-',
-    termen: val('input[name=when]:checked'),
-    nume: val('#nm'),
-    telefon: val('#ph'),
-    email: val('#em') || '-',
-    detalii: val('#msg') || '-'
-  };
-}
-function offerText(d) {
-  return `Bună ziua! Doresc o ofertă.\n• Mobilier: ${d.mobilier}\n• Dimensiuni: ${d.dimensiuni}\n• Localitate: ${d.localitate}\n• Termen: ${d.termen}\n• Nume: ${d.nume}\n• Telefon: ${d.telefon}` + (d.detalii !== '-' ? `\n• Detalii: ${d.detalii}` : '');
-}
-function showStatus(kind, html) {
-  qstatus.className = 'qstatus ' + kind;
-  qstatus.innerHTML = html;
-  qstatus.hidden = false;
-}
-function validOffer(d) {
-  const digits = d.telefon.replace(/\D/g, '');
-  if (!d.nume) { showStatus('err', 'Te rugăm să completezi numele.'); document.getElementById('nm').focus(); return false; }
-  if (digits.length < 9) { showStatus('err', 'Te rugăm să completezi un număr de telefon valid.'); document.getElementById('ph').focus(); return false; }
-  if (d.email !== '-' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { showStatus('err', 'Adresa de e-mail nu pare corectă.'); document.getElementById('em').focus(); return false; }
-  return true;
-}
-
-qf.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (val('#hp')) return;                       // robot
-  const d = offerData();
-  if (!validOffer(d)) return;
-
-  qsend.disabled = true;
-  qsend.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Se trimite…';
-  qstatus.hidden = true;
-
-  const payload = {
-    _subject: `Cerere ofertă: ${d.mobilier} – ${d.nume} (${d.localitate})`,
-    _template: 'table',
-    _captcha: 'false',
-    'Mobilier': d.mobilier,
-    'Dimensiuni aproximative': d.dimensiuni,
-    'Localitate': d.localitate,
-    'Termen dorit': d.termen,
-    'Nume': d.nume,
-    'Telefon': d.telefon,
-    'E-mail client': d.email,
-    'Detalii': d.detalii,
-    'Trimis la': new Date().toLocaleString('ro-RO')
-  };
-  if (d.email !== '-') payload._replyto = d.email;   // „Reply” din Gmail răspunde direct clientului
-
-  try {
-    const r = await fetch(OFFER_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok || String(j.success) !== 'true') {
-      console.warn('FormSubmit a răspuns:', r.status, j);   // vezi motivul exact în consola browserului (F12)
-      throw new Error(j.message || ('HTTP ' + r.status));
-    }
-    showStatus('ok', '<i class="fa-solid fa-circle-check"></i> <b>Mulțumim, ' + d.nume.replace(/[<>&"]/g, '') + '!</b> Cererea a fost trimisă. Te sunăm în cel mai scurt timp, în programul L–V 08:00–16:00.');
-    qf.reset();
-  } catch (err) {
-    console.warn('Cererea de ofertă nu a fost trimisă:', err.message);
-    if (/activat/i.test(err.message)) {
-      // apare doar până când proprietarul confirmă adresa de e-mail în FormSubmit
-      showStatus('err', 'Formularul așteaptă activarea: verifică e-mailul <b>' + OFFER_EMAIL + '</b> (și folderul Spam) pentru mesajul de la FormSubmit și apasă „Activate Form”. Până atunci, scrie-ne pe <a href="https://wa.me/40722252414?text=' + encodeURIComponent(offerText(d)) + '" style="text-decoration:underline">WhatsApp</a>.');
-      return;
-    }
-    showStatus('err', 'Cererea nu a putut fi trimisă acum. Te rugăm să ne scrii pe <a href="https://wa.me/40722252414?text=' + encodeURIComponent(offerText(d)) + '" style="text-decoration:underline">WhatsApp</a> sau să ne suni la <a href="tel:0722252414" style="text-decoration:underline">0722 252 414</a>.');
-  } finally {
-    qsend.disabled = false;
-    qsend.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Trimite cererea';
-  }
-});
-
-document.getElementById('qwa').addEventListener('click', () => {
-  const d = offerData();
-  location.href = 'https://wa.me/40722252414?text=' + encodeURIComponent(offerText(d));
-});
 </script>
 </body>
 </html>

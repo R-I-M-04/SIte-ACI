@@ -117,7 +117,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <div class="wrap">
     <a href="Index.html" class="logo"><i class="fa-solid fa-couch"></i><div><b>ACI <span>MOBILĂ</span></b><small>ACTUAL CIP INVEST</small></div></a>
     <nav class="nav"><a href="Index.html#servicii">Servicii</a><a href="Portofoliu.html" class="on">Portofoliu</a><a href="Index.html#proces">Cum lucrăm</a><a href="Index.html#faq">Întrebări</a><a href="Index.html#contact">Contact</a></nav>
-    <a class="btn btn-gold top-call" href="Index.html#oferta" style="min-height:44px;padding:10px 18px;font-size:.9rem">Cere ofertă</a>
+    <a class="btn btn-gold top-call" href="Oferta.html" style="min-height:44px;padding:10px 18px;font-size:.9rem">Cere ofertă</a>
     <button class="burger" id="burger" aria-label="Meniu"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
@@ -125,7 +125,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
   <a href="Index.html">Acasă <i class="fa-solid fa-chevron-right"></i></a>
   <a href="Index.html#servicii">Servicii <i class="fa-solid fa-chevron-right"></i></a>
   <a href="Index.html#proces">Cum lucrăm <i class="fa-solid fa-chevron-right"></i></a>
-  <a href="Index.html#oferta">Cere ofertă <i class="fa-solid fa-chevron-right"></i></a>
+  <a href="Oferta.html">Cere ofertă <i class="fa-solid fa-chevron-right"></i></a>
   <a href="Index.html#faq">Întrebări frecvente <i class="fa-solid fa-chevron-right"></i></a>
   <a href="Index.html#contact">Contact & program <i class="fa-solid fa-chevron-right"></i></a>
 </nav>
@@ -151,7 +151,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
       <p>Spune-ne ce lucrare te-a inspirat și îți facem o ofertă pe dimensiunile tale.</p>
     </div>
     <div class="two">
-      <a class="btn btn-gold" href="Index.html#oferta"><i class="fa-solid fa-file-pen"></i> Cere ofertă</a>
+      <a class="btn btn-gold" id="ctaOffer" href="Oferta.html"><i class="fa-solid fa-file-pen"></i> Cere ofertă</a>
       <a class="btn btn-wa" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     </div>
   </div>
@@ -170,7 +170,7 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
 <nav class="bar">
   <a class="c" href="tel:0722252414"><i class="fa-solid fa-phone"></i> Sună</a>
   <a class="w" href="https://wa.me/40722252414"><i class="fa-brands fa-whatsapp"></i> Chat</a>
-  <a class="o" href="Index.html#oferta"><i class="fa-solid fa-file-pen"></i> Ofertă</a>
+  <a class="o" href="Oferta.html"><i class="fa-solid fa-file-pen"></i> Ofertă</a>
 </nav>
 
     <script>
@@ -291,6 +291,8 @@ footer{background:var(--ink);color:#a59e93;text-align:center;padding:28px 18px;f
                 if (show) n++;
             });
             countEl.textContent = n + (n === 1 ? ' proiect' : ' proiecte');
+            const cta = document.getElementById('ctaOffer');
+            if (cta) cta.href = category === 'all' ? 'Oferta.html' : 'Oferta.html?tip=' + category;
             visible = [];
             SLIDES.forEach((sl, idx) => {
                 if (category === 'all' || ITEMS[sl.item].cat === category) visible.push(idx);
