@@ -105,6 +105,13 @@ section{padding:56px 0}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .tags span{font-size:.72rem;font-weight:700;background:#f4efe4;color:#7a5f17;padding:5px 9px;border-radius:99px}
 @media(min-width:900px){#proj .row{grid-template-columns:repeat(3,1fr)}}
+/* pe telefon: cardul vizibil stă centrat pe ecran (și primul, și ultimul) */
+@media(max-width:899px){
+  .row{padding-left:14vw;padding-right:14vw}
+  .svc{flex:0 0 72vw;scroll-snap-align:center}
+  #proj .row{padding-left:7vw;padding-right:7vw}
+  .proj{flex:0 0 86vw;scroll-snap-align:center}
+}
 .more{display:flex;justify-content:center;margin-top:22px}
 
 /* PROCESS */
